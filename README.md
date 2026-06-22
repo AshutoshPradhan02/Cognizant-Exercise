@@ -5,9 +5,9 @@ This repository contains the complete Bootstrap 5 exercise solutions for the Cog
 ## Repository structure
 
 - `Upskilling/Module-01-Bootstrap5/`
-  - `01-Setup/Exercise-1.1-CDN/` — solves Exercise 1.1.
-  - `01-Setup/Exercise-1.2-LocalBootstrap/` — solves Exercise 1.2.
-  - `Bootstrap-Exercises/` — organized main solution hub for Exercises 1 through 19.
+  - `01-Setup/Exercise-1.1-CDN/` - solves Exercise 1.1.
+  - `01-Setup/Exercise-1.2-LocalBootstrap/` - solves Exercise 1.2.
+  - `Bootstrap-Exercises/` - organized main solution hub for Exercises 1 through 19.
 
 > The `Module-01-Bootstrap5` folder is not strictly required, but it is useful for grouping module-level training content. It is kept for a clean and professional repository layout.
 
