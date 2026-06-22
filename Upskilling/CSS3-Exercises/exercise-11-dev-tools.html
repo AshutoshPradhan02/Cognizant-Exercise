@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 11: Dev Tools & Debugging - CSS3 Exercises</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Exercise 11: DevTools Debugging */
+    .devtools-step {
+      background-color: #f0f4ff;
+      border-left: 4px solid #667eea;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+
+    .devtools-step h4 {
+      color: #667eea;
+      margin-top: 0;
+    }
+
+    .debugging-element {
+      background-color: #fff3cd;
+      border: 3px solid #ffc107;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-radius: 4px;
+      color: #856404;
+    }
+
+    .broken-layout {
+      display: flex;
+      gap: 1rem;
+      background-color: #f0f4ff;
+      padding: 1rem;
+      border-radius: 4px;
+      margin: 1rem 0;
+    }
+
+    .broken-layout > div {
+      flex: 1;
+      background-color: white;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .device-preview {
+      display: inline-block;
+      background-color: #333;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      margin: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div id="mainHeader">
+      <h1>Exercise 11: Debug and Test with Dev Tools and VS Code</h1>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="exercise-10-responsive.html">Exercise 10</a></li>
+      <li><a href="exercise-11-dev-tools.html">Exercise 11</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section class="exercise-section">
+      <h2>Exercise 11: Debug and Test with Dev Tools and VS Code</h2>
+      
+      <h3>Scenario</h3>
+      <p class="intro-text">
+        Some users report layout breaking on smaller screens. Your design looks perfect on your desktop, 
+        but it doesn't work correctly on mobile devices. You need to use developer tools to identify and fix these issues.
+      </p>
+
+      <h3>Objective</h3>
+      <p class="intro-text">
+        Learn to use Chrome DevTools and VS Code to debug CSS issues, test responsive design, 
+        and troubleshoot styling problems like a professional developer.
+      </p>
+
+      <h3>Chrome DevTools - Inspector Tab</h3>
+
+      <div class="devtools-step">
+        <h4>Step 1: Open DevTools and Select Inspector</h4>
+        <ol class="feature-list" style="list-style-type: decimal; margin-left: 2rem;">
+          <li><strong>Windows/Linux:</strong> Press <span class="highlight">F12</span> or <span class="highlight">Ctrl+Shift+I</span></li>
+          <li><strong>Mac:</strong> Press <span class="highlight">Cmd+Option+I</span></li>
+          <li>The DevTools panel opens at the bottom or right side</li>
+          <li>Click the <strong>"Inspector" tab</strong> (first tab, looks like a cursor)</li>
+        </ol>
+      </div>
+
+      <div class="devtools-step">
+        <h4>Step 2: Select an Element</h4>
+        <ol class="feature-list" style="list-style-type: decimal; margin-left: 2rem;">
+          <li>Click the <strong>"Select Element" icon</strong> (top-left, looks like a cursor in a box)</li>
+          <li>Hover over any element on the page - it highlights and shows dimensions</li>
+          <li>Click to select it - the HTML and CSS appear in the inspector</li>
+          <li>The <strong>Box Model diagram</strong> shows margin, border, padding, and content</li>
+        </ol>
+      </div>
+
+      <div class="devtools-step">
+        <h4>Step 3: View CSS Rules</h4>
+        <ol class="feature-list" style="list-style-type: decimal; margin-left: 2rem;">
+          <li>In the <strong>"Styles" tab</strong>, see all CSS rules applied to the element</li>
+          <li>Rules are listed in order: most specific rules first, then less specific</li>
+          <li><strong>Strikethrough rules</strong> mean they're overridden by more specific rules</li>
+          <li>Hover over property values to see them highlighted on the page</li>
+        </ol>
+      </div>
+
+      <div class="eventCard">
+        <h4>Example: Debugging a Button</h4>
+        <div class="debugging-element">
+          <strong>Problem:</strong> Button has conflicting styles<br>
+          In DevTools, you might see:<br>
+          <div class="code-example">
+            ✗ padding: 0.5rem;  /* strikethrough - overridden */<br>
+            ✓ padding: 1rem;    /* active rule - this one applies */
+          </div>
+          <strong>Solution:</strong> Find why the first rule is being overridden. Check selector specificity!
+        </div>
+      </div>
+
+      <h3>Chrome DevTools - Edit Styles Live</h3>
+
+      <div class="devtools-step">
+        <h4>Live Edit CSS Properties</h4>
+        <ol class="feature-list" style="list-style-type: decimal; margin-left: 2rem;">
+          <li>In the <strong>Styles panel</strong>, double-click any CSS value</li>
+          <li>Type a new value and press <strong>Enter</strong></li>
+          <li>The change appears <strong>immediately on the page</strong></li>
+          <li>These changes are <strong>temporary</strong> - they refresh away when you reload</li>
+          <li>Use this to test fixes before modifying your source code</li>
+        </ol>
+      </div>
+
+      <div class="eventCard">
+        <h4>Example: Testing Responsive Changes</h4>
+        <div class="code-example">
+          Original: width: 100%;<br>
+          Change to: width: 90%;<br>
+          See the effect immediately!<br>
+          <br>
+          Original: display: flex;<br>
+          Change to: display: block;<br>
+          Notice how the layout changes in real-time!
+        </div>
+      </div>
+
+      <h3>Chrome DevTools - Device Toolbar</h3>
+
+      <div class="devtools-step">
+        <h4>Test Responsive Design</h4>
+        <ol class="feature-list" style="list-style-type: decimal; margin-left: 2rem;">
+          <li>Open DevTools (F12)</li>
+          <li>Click the <strong>Device Toolbar icon</strong> (top-left, looks like a phone/tablet)</li>
+          <li>Choose a device from the dropdown or set custom dimensions</li>
+          <li>Your page now shows as it would on that device</li>
+          <li>Resize the window by dragging the edge to test at different widths</li>
+        </ol>
+      </div>
+
+      <div class="eventCard">
+        <p><strong>Device options:</strong></p>
+        <div>
+          <span class="device-preview">iPhone 12</span>
+          <span class="device-preview">iPad</span>
+          <span class="device-preview">Galaxy S10</span>
+          <span class="device-preview">Custom (320×568)</span>
+        </div>
+      </div>
+
+      <h3>Chrome DevTools - Network Tab</h3>
+
+      <div class="devtools-step">
+        <h4>Check if CSS Files Load</h4>
+        <ol class="feature-list" style="list-style-type: decimal; margin-left: 2rem;">
+          <li>Open DevTools and go to the <strong>"Network" tab</strong></li>
+          <li>Reload the page (Ctrl+R or Cmd+R)</li>
+          <li>You see all files the page loads (HTML, CSS, JS, images, fonts)</li>
+          <li>Look for <strong>.css files</strong> - check if they load successfully</li>
+          <li>Red/orange indicates errors (404 Not Found, etc.)</li>
+          <li>Click a CSS file to see details like file size and load time</li>
+        </ol>
+      </div>
+
+      <div class="eventCard">
+        <h4>Common Issues</h4>
+        <ul class="feature-list">
+          <li><strong>404 errors:</strong> CSS file path is wrong</li>
+          <li><strong>CORS errors:</strong> External CSS is blocked by security</li>
+          <li><strong>File doesn't appear:</strong> Link tag is missing from HTML</li>
+          <li><strong>Slow loading:</strong> CSS file is too large or server is slow</li>
+        </ul>
+      </div>
+
+      <h3>VS Code - CSS Debugging & Linting</h3>
+
+      <div class="devtools-step">
+        <h4>Syntax Errors in VS Code</h4>
+        <ol class="feature-list" style="list-style-type: decimal; margin-left: 2rem;">
+          <li>VS Code underlines CSS errors in red squiggly lines</li>
+          <li>Hover over the error to see what's wrong</li>
+          <li><strong>Common errors:</strong> Missing semicolon, wrong property name, invalid value</li>
+          <li>Install <strong>"CSS Peek"</strong> extension to jump to CSS from HTML</li>
+        </ol>
+      </div>
+
+      <h3>Common CSS Debugging Scenarios</h3>
+
+      <div class="eventCard">
+        <h4>Scenario 1: Styles Not Appearing</h4>
+        <p><strong>Problem:</strong> You changed CSS but nothing happened</p>
+        <div class="code-example">
+          Check:<br>
+          1. Did you save the file?<br>
+          2. Is the CSS file linked correctly? Check path in &lt;link&gt; tag<br>
+          3. Did you reload the page? (Ctrl+R)<br>
+          4. Is your selector specific enough? Check DevTools<br>
+          5. Is a more specific rule overriding your styles?<br>
+          6. Try adding !important temporarily (for debugging only!)
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>Scenario 2: Layout Breaking on Mobile</h4>
+        <p><strong>Problem:</strong> Site looks good on desktop but breaks on mobile</p>
+        <div class="code-example">
+          Check:<br>
+          1. Open DevTools Device Toolbar<br>
+          2. Select iPhone size and check where it breaks<br>
+          3. Are images too large? Set max-width: 100%<br>
+          4. Is text too small? Min 16px on mobile<br>
+          5. Are margins/padding too large for small screens?<br>
+          6. Do you have media queries for mobile?
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>Scenario 3: Unwanted Spacing or Alignment</h4>
+        <p><strong>Problem:</strong> Elements have extra margin or padding, or alignment is off</p>
+        <div class="code-example">
+          Check:<br>
+          1. Select the element in DevTools<br>
+          2. Look at the Box Model diagram<br>
+          3. Identify which layer is causing the issue (margin/padding/border)<br>
+          4. Edit the value in DevTools to test fix<br>
+          5. Apply the fix to your CSS file
+        </div>
+      </div>
+
+      <h3>Debugging Workflow</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Step</th>
+            <th>Action</th>
+            <th>What to Look For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1. Identify Issue</td>
+            <td>Look at problem element on page</td>
+            <td>Visual anomaly (wrong color, size, position)</td>
+          </tr>
+          <tr>
+            <td>2. Open DevTools</td>
+            <td>Press F12</td>
+            <td>DevTools panel appears</td>
+          </tr>
+          <tr>
+            <td>3. Select Element</td>
+            <td>Click selector icon, click element</td>
+            <td>HTML is highlighted, styles appear</td>
+          </tr>
+          <tr>
+            <td>4. Inspect Styles</td>
+            <td>Look at Styles tab</td>
+            <td>Which rules apply? Are any strikethrough?</td>
+          </tr>
+          <tr>
+            <td>5. Check Box Model</td>
+            <td>Look at Box Model diagram</td>
+            <td>Is margin/padding/border causing issue?</td>
+          </tr>
+          <tr>
+            <td>6. Test Fix</td>
+            <td>Edit CSS value in DevTools</td>
+            <td>Does the change fix the problem?</td>
+          </tr>
+          <tr>
+            <td>7. Update Code</td>
+            <td>Modify CSS file in editor</td>
+            <td>Save and reload page</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Best Practices for Debugging</h3>
+      <ul class="feature-list">
+        <li><strong>Always reload:</strong> F5 or Ctrl+R after making changes</li>
+        <li><strong>Test on multiple devices:</strong> Use DevTools Device Toolbar</li>
+        <li><strong>Check file paths:</strong> Use Network tab if files don't load</li>
+        <li><strong>Test live in DevTools:</strong> Before changing source code</li>
+        <li><strong>Use browser cache carefully:</strong> Hard refresh (Ctrl+Shift+R) to clear cache</li>
+        <li><strong>Document your fixes:</strong> Add comments explaining why you made changes</li>
+        <li><strong>Check specificity:</strong> Lower specificity often solves override issues</li>
+      </ul>
+
+      <h3>Challenge</h3>
+      <div class="colored-box" style="background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);">
+        <p style="color: white; margin: 0;">
+          <strong>Your Task:</strong> Practice debugging with DevTools:
+          <br>
+          • Open this page in Chrome and press F12<br>
+          • Inspect different elements and view their styles<br>
+          • Try changing a property value live in DevTools<br>
+          • Open Device Toolbar and test at different screen sizes<br>
+          • Go to Network tab and verify CSS loads<br>
+          • Find and document 3 CSS rules that apply to this page
+        </p>
+      </div>
+
+      <h3>Resources & Further Learning</h3>
+      <ul class="feature-list">
+        <li><a href="https://developer.chrome.com/docs/devtools/">Chrome DevTools Documentation</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Tools">Firefox Developer Tools</a></li>
+        <li><a href="https://webkit.org/blog/11305/web-inspector-released-in-webkit/">Safari Web Inspector</a></li>
+        <li><a href="https://code.visualstudio.com/docs">VS Code Documentation</a></li>
+      </ul>
+
+      <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+        <a href="exercise-10-responsive.html" class="cta-button">← Previous: Exercise 10</a>
+        <a href="index.html" class="cta-button" style="float: right;">Back to Home →</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 CSS3 Exercises - Community Event Portal | Complete! Congratulations on finishing all 11 exercises!</p>
+  </footer>
+</body>
+</html>

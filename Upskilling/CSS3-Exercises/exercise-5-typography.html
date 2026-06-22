@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 5: Typography - CSS3 Exercises</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Exercise 5: Typography Demonstrations */
+    
+    .serif-font {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #764ba2;
+      margin: 1rem 0;
+    }
+
+    .sans-serif-font {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #333;
+      margin: 1rem 0;
+    }
+
+    .text-decoration-demo {
+      text-decoration: underline;
+      text-decoration-color: #667eea;
+      text-decoration-thickness: 3px;
+      text-underline-offset: 5px;
+    }
+
+    .text-transform-uppercase {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #667eea;
+    }
+
+    .text-transform-capitalize {
+      text-transform: capitalize;
+    }
+
+    .line-height-demo {
+      line-height: 2;
+      color: #555;
+    }
+
+    .letter-spacing-demo {
+      letter-spacing: 3px;
+      color: #764ba2;
+    }
+
+    .word-spacing-demo {
+      word-spacing: 8px;
+      color: #667eea;
+    }
+
+    .text-shadow-demo {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      font-size: 1.5rem;
+      color: #667eea;
+    }
+
+    .text-justify {
+      text-align: justify;
+      color: #555;
+    }
+
+    .font-size-demo-sm {
+      font-size: 0.85rem;
+    }
+
+    .font-size-demo-lg {
+      font-size: 1.5rem;
+    }
+
+    .font-weight-demo-light {
+      font-weight: 300;
+    }
+
+    .font-weight-demo-bold {
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div id="mainHeader">
+      <h1>Exercise 5: Typography - Fonts and Text</h1>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="exercise-4-colors-background.html">Exercise 4</a></li>
+      <li><a href="exercise-5-typography.html">Exercise 5</a></li>
+      <li><a href="exercise-6-links-lists.html">Exercise 6</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section class="exercise-section">
+      <h2>Exercise 5: Typography - Fonts and Text</h2>
+      
+      <h3>Scenario</h3>
+      <p class="intro-text">
+        The marketing team wants more appealing fonts and better readability for the event portal. 
+        Typography is key to creating a professional, engaging website.
+      </p>
+
+      <h3>Objective</h3>
+      <p class="intro-text">
+        Enhance textual appearance and readability using Google Fonts and CSS typography properties.
+      </p>
+
+      <h3>Font Selection</h3>
+
+      <div class="eventCard">
+        <h4>Using Google Fonts</h4>
+        <p>Import Google Fonts in your HTML &lt;head&gt;:</p>
+        <div class="code-example">
+          &lt;link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet"&gt;
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>1. Serif Font (Playfair Display)</h4>
+        <p>Great for headlines and elegant content</p>
+        <div class="code-example">
+          font-family: 'Playfair Display', serif;
+        </div>
+        <div class="serif-font">
+          This is a beautiful serif font for headlines
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>2. Sans-Serif Font (Roboto)</h4>
+        <p>Perfect for body text and web content</p>
+        <div class="code-example">
+          font-family: 'Roboto', sans-serif;
+        </div>
+        <div class="sans-serif-font">
+          This is a clean sans-serif font for body text and paragraphs. It's highly readable on screens.
+        </div>
+      </div>
+
+      <h3>Font Properties</h3>
+
+      <div class="eventCard">
+        <h4>Font Size</h4>
+        <p>Control text size using px, rem, or em units</p>
+        <div class="code-example">
+          font-size: 16px;    /* pixels */<br>
+          font-size: 1rem;    /* relative to root (16px) */<br>
+          font-size: 1.2em;   /* relative to parent */
+        </div>
+        <p><span class="font-size-demo-sm">This text is small (0.85rem)</span></p>
+        <p><span class="font-size-demo-lg">This text is large (1.5rem)</span></p>
+      </div>
+
+      <div class="eventCard">
+        <h4>Font Weight</h4>
+        <p>Control text thickness (100-900, or keywords)</p>
+        <div class="code-example">
+          font-weight: 400;   /* normal */<br>
+          font-weight: 700;   /* bold */<br>
+          font-weight: normal|bold|lighter|bolder;
+        </div>
+        <p><span class="font-weight-demo-light">This text is light (300)</span></p>
+        <p><span class="font-weight-demo-bold">This text is bold (700)</span></p>
+      </div>
+
+      <div class="eventCard">
+        <h4>Font Style</h4>
+        <p>Make text italic or oblique</p>
+        <div class="code-example">
+          font-style: normal;<br>
+          font-style: italic;<br>
+          font-style: oblique;
+        </div>
+        <p><em>This text is italic</em></p>
+        <p><strong>This text is bold</strong></p>
+      </div>
+
+      <h3>Text Properties</h3>
+
+      <div class="eventCard">
+        <h4>Text Alignment</h4>
+        <p>Align text horizontally</p>
+        <div class="code-example">
+          text-align: left|center|right|justify;
+        </div>
+        <p style="text-align: center;">This text is center aligned</p>
+        <p style="text-align: right;">This text is right aligned</p>
+      </div>
+
+      <div class="eventCard">
+        <h4>Text Transform</h4>
+        <p>Change text case without modifying HTML</p>
+        <div class="code-example">
+          text-transform: uppercase|lowercase|capitalize;
+        </div>
+        <p class="text-transform-uppercase">this text is transformed to uppercase</p>
+        <p class="text-transform-capitalize">this text is capitalized</p>
+      </div>
+
+      <div class="eventCard">
+        <h4>Letter Spacing</h4>
+        <p>Control space between characters</p>
+        <div class="code-example">
+          letter-spacing: 3px;  /* positive for more space */<br>
+          letter-spacing: -1px; /* negative for less space */
+        </div>
+        <p class="letter-spacing-demo">This text has increased letter spacing</p>
+      </div>
+
+      <div class="eventCard">
+        <h4>Line Height</h4>
+        <p>Control vertical space between lines</p>
+        <div class="code-example">
+          line-height: 1.6;  /* unitless (multiplier) */<br>
+          line-height: 20px; /* fixed pixels */
+        </div>
+        <div class="line-height-demo">
+          This paragraph has increased line-height (2), making it much more readable. 
+          Generous spacing between lines is important for body text. Many designers recommend 1.5 to 2 for optimal readability.
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>Word Spacing</h4>
+        <p>Control space between words</p>
+        <div class="code-example">
+          word-spacing: 8px;
+        </div>
+        <p class="word-spacing-demo">This text has increased word spacing between every word</p>
+      </div>
+
+      <div class="eventCard">
+        <h4>Text Shadow</h4>
+        <p>Add shadow effect to text</p>
+        <div class="code-example">
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);<br>
+          /* offset-x | offset-y | blur-radius | color */
+        </div>
+        <p class="text-shadow-demo">This text has a subtle shadow effect</p>
+      </div>
+
+      <div class="eventCard">
+        <h4>Text Decoration</h4>
+        <p>Underline, overline, or strikethrough</p>
+        <div class="code-example">
+          text-decoration: underline;<br>
+          text-decoration-color: #667eea;<br>
+          text-decoration-thickness: 3px;
+        </div>
+        <p class="text-decoration-demo">This text has a custom underline</p>
+      </div>
+
+      <h3>Typography Summary Table</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Values</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>font-family</td>
+            <td>Font name or stack</td>
+            <td>Choose typeface</td>
+          </tr>
+          <tr>
+            <td>font-size</td>
+            <td>px, rem, em, %</td>
+            <td>Set text size</td>
+          </tr>
+          <tr>
+            <td>font-weight</td>
+            <td>100-900, normal, bold</td>
+            <td>Text thickness</td>
+          </tr>
+          <tr>
+            <td>font-style</td>
+            <td>normal, italic, oblique</td>
+            <td>Italic or slanted</td>
+          </tr>
+          <tr>
+            <td>line-height</td>
+            <td>Unitless, px, em</td>
+            <td>Vertical space between lines</td>
+          </tr>
+          <tr>
+            <td>letter-spacing</td>
+            <td>px, em</td>
+            <td>Space between characters</td>
+          </tr>
+          <tr>
+            <td>word-spacing</td>
+            <td>px, em</td>
+            <td>Space between words</td>
+          </tr>
+          <tr>
+            <td>text-align</td>
+            <td>left, center, right, justify</td>
+            <td>Horizontal alignment</td>
+          </tr>
+          <tr>
+            <td>text-transform</td>
+            <td>uppercase, lowercase, capitalize</td>
+            <td>Change text case</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Typography Best Practices</h3>
+      <ul class="feature-list">
+        <li><strong>Limit fonts:</strong> Use 2-3 fonts maximum (1 for headings, 1 for body)</li>
+        <li><strong>Font size:</strong> Body text should be 16px minimum for readability</li>
+        <li><strong>Line height:</strong> Use 1.5-1.8 for body text for comfortable reading</li>
+        <li><strong>Font pairing:</strong> Use serif + sans-serif or similar weight combinations</li>
+        <li><strong>Contrast:</strong> Ensure sufficient contrast between text and background</li>
+        <li><strong>Google Fonts:</strong> Use for better font selection and performance</li>
+        <li><strong>Web-safe fonts:</strong> Always provide fallbacks in font-family stack</li>
+      </ul>
+
+      <h3>Challenge</h3>
+      <div class="colored-box" style="background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);">
+        <p style="color: white; margin: 0;">
+          <strong>Your Task:</strong> Design a page with professional typography:
+          <br>
+          • Import 2 Google Fonts<br>
+          • Create a hierarchy: H1 (serif, large), H2 (sans-serif, medium), body (sans-serif)<br>
+          • Set line-height to 1.6+ for body text<br>
+          • Use letter-spacing for visual interest<br>
+          • Test readability on different screen sizes
+        </p>
+      </div>
+
+      <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+        <a href="exercise-4-colors-background.html" class="cta-button">← Previous: Exercise 4</a>
+        <a href="exercise-6-links-lists.html" class="cta-button" style="float: right;">Next: Exercise 6 →</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 CSS3 Exercises - Community Event Portal</p>
+  </footer>
+</body>
+</html>

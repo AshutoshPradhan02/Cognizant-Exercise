@@ -1,0 +1,481 @@
+/* ============================================
+   CSS3 Exercises - Styling the Community Event Portal
+   ============================================ */
+
+/* -------- Universal and Reset Styles -------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* -------- Header and Navigation Styles -------- */
+header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#mainHeader h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+nav {
+  background-color: #333;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+}
+
+nav ul li {
+  margin: 0;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:link {
+  color: white;
+}
+
+nav ul li a:visited {
+  color: #ddd;
+}
+
+nav ul li a:hover {
+  background-color: #667eea;
+  color: white;
+}
+
+nav ul li a:active {
+  background-color: #764ba2;
+}
+
+/* -------- Main Content Container -------- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.exercise-section {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.exercise-section h2 {
+  color: #667eea;
+  border-bottom: 3px solid #667eea;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.exercise-section h3 {
+  color: #764ba2;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+/* -------- Event Card Styling -------- */
+.eventCard {
+  border: 2px solid #667eea;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background-color: #f0f4ff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.eventCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.eventCard h4 {
+  color: #764ba2;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.eventCard p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* -------- CTA Button Styling -------- */
+.cta-button {
+  background-color: #007BFF;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+/* -------- Table Styling -------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+table th {
+  background-color: #667eea;
+  color: white;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  border: 1px solid #555;
+}
+
+table td {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+/* Zebra striping for rows */
+table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+  background-color: #f0f4ff;
+}
+
+/* -------- Typography Styles -------- */
+.intro-text {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.code-example {
+  background-color: #f5f5f5;
+  border-left: 4px solid #667eea;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  overflow-x: auto;
+}
+
+.highlight {
+  background-color: #fff3cd;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+/* -------- Links and Lists Styling -------- */
+a {
+  color: #667eea;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+.feature-list {
+  list-style-type: none;
+  margin-left: 0;
+  margin-bottom: 1.5rem;
+}
+
+.feature-list li {
+  padding: 0.75rem 0;
+  padding-left: 2rem;
+  position: relative;
+  color: #555;
+}
+
+.feature-list li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.nav-list li {
+  padding: 0.5rem 0;
+  margin: 0;
+}
+
+.nav-list li a {
+  color: #667eea;
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-list li a:hover {
+  background-color: #f0f4ff;
+  color: #764ba2;
+}
+
+/* -------- Form Styling -------- */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  outline: 3px solid #667eea;
+  border-color: #667eea;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* -------- Multi-column Text -------- */
+.news-article {
+  column-count: 2;
+  column-gap: 2rem;
+  column-rule: 1px solid #ddd;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .news-article {
+    column-count: 1;
+  }
+}
+
+/* -------- Flexbox Layout Examples -------- */
+.flex-container {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.flex-item {
+  flex: 1;
+  min-width: 250px;
+  background-color: #f0f4ff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* -------- Responsive Grid -------- */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.grid-item {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* -------- Footer Styling -------- */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+  border-top: 3px solid #667eea;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* -------- Media Queries for Responsive Design -------- */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  #mainHeader h1 {
+    font-size: 1.8rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul li a {
+    display: block;
+    border-bottom: 1px solid #555;
+    padding: 1rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .exercise-section {
+    padding: 1.5rem;
+  }
+
+  .flex-container {
+    flex-direction: column;
+  }
+
+  .flex-item {
+    flex: 1 1 100%;
+    min-width: unset;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  table th,
+  table td {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #mainHeader h1 {
+    font-size: 1.5rem;
+  }
+
+  .exercise-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .exercise-section h3 {
+    font-size: 1.1rem;
+  }
+
+  nav ul li a {
+    padding: 0.75rem;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* -------- Utility Classes -------- */
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mt-2 {
+  margin-top: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 1rem;
+}
+
+.p-2 {
+  padding: 1rem;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.display-none {
+  display: none;
+}
+
+.colored-box {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 3: Selectors Playground - CSS3 Exercises</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Exercise 3: Selector demonstrations */
+    
+    /* Universal selector - reset */
+    * {
+      /* already in external CSS */
+    }
+
+    /* Element selector - style all h2 */
+    h2 {
+      /* already styled in external CSS */
+    }
+
+    /* ID selector for main header */
+    #mainHeader {
+      /* already styled in external CSS */
+    }
+
+    /* Class selector for event cards */
+    .eventCard {
+      /* already styled in external CSS */
+    }
+
+    /* Grouping selector - h3 and p styled together */
+    h3, p {
+      /* already styled in external CSS */
+    }
+
+    /* Descendant selector */
+    .exercise-section h3 {
+      color: #764ba2;
+    }
+
+    /* Child selector */
+    .exercise-section > h2 {
+      border-bottom: 3px solid #667eea;
+    }
+
+    /* Attribute selector */
+    input[type="text"] {
+      /* already in external CSS */
+    }
+
+    /* Pseudo-class selector */
+    a:hover {
+      color: #764ba2;
+    }
+
+    .selector-demo {
+      border: 2px dashed #667eea;
+      padding: 1rem;
+      margin: 1rem 0;
+      background-color: #f0f4ff;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div id="mainHeader">
+      <h1>Exercise 3: Selectors Playground</h1>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="exercise-1-css-methods.html">Exercise 1</a></li>
+      <li><a href="exercise-2-syntax.html">Exercise 2</a></li>
+      <li><a href="exercise-3-selectors.html">Exercise 3</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section class="exercise-section">
+      <h2>Exercise 3: Selectors Playground</h2>
+      
+      <h3>Scenario</h3>
+      <p class="intro-text">
+        You need to style various elements based on IDs, classes, and element types. Understanding different selector types 
+        is crucial for writing efficient and maintainable CSS.
+      </p>
+
+      <h3>Objective</h3>
+      <p class="intro-text">
+        Master different selector types and understand when to use each one for optimal specificity and maintainability.
+      </p>
+
+      <h3>CSS Selector Types</h3>
+
+      <div class="eventCard">
+        <h4>1. Universal Selector (*)</h4>
+        <p>Selects ALL elements on the page. Used for reset styles.</p>
+        <div class="code-example">
+          * {<br>
+          &nbsp;&nbsp;margin: 0;<br>
+          &nbsp;&nbsp;padding: 0;<br>
+          &nbsp;&nbsp;box-sizing: border-box;<br>
+          }
+        </div>
+        <p><strong>Use Case:</strong> Reset default browser margins and padding</p>
+      </div>
+
+      <div class="eventCard">
+        <h4>2. Element Selector</h4>
+        <p>Selects all instances of a specific HTML element.</p>
+        <div class="code-example">
+          h2 {<br>
+          &nbsp;&nbsp;color: #667eea;<br>
+          &nbsp;&nbsp;font-size: 1.8rem;<br>
+          }
+        </div>
+        <p><strong>Use Case:</strong> Style all headings or paragraphs consistently</p>
+      </div>
+
+      <div class="eventCard">
+        <h4>3. ID Selector (#)</h4>
+        <p>Selects a single element with a specific ID. IDs must be unique.</p>
+        <div class="code-example">
+          #mainHeader {<br>
+          &nbsp;&nbsp;background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);<br>
+          &nbsp;&nbsp;color: white;<br>
+          }
+        </div>
+        <p><strong>Use Case:</strong> Style unique, important sections like the main header</p>
+        <p><strong>Specificity:</strong> Very high (100 points)</p>
+      </div>
+
+      <div class="eventCard">
+        <h4>4. Class Selector (.)</h4>
+        <p>Selects all elements with a specific class. Classes are reusable.</p>
+        <div class="code-example">
+          .eventCard {<br>
+          &nbsp;&nbsp;border: 2px solid #667eea;<br>
+          &nbsp;&nbsp;border-radius: 8px;<br>
+          &nbsp;&nbsp;padding: 1.5rem;<br>
+          }
+        </div>
+        <p><strong>Use Case:</strong> Style reusable components across multiple pages</p>
+        <p><strong>Specificity:</strong> Medium (10 points)</p>
+      </div>
+
+      <div class="eventCard">
+        <h4>5. Grouping Selector (,)</h4>
+        <p>Applies the same styles to multiple selectors.</p>
+        <div class="code-example">
+          h3, p {<br>
+          &nbsp;&nbsp;color: #333;<br>
+          &nbsp;&nbsp;line-height: 1.6;<br>
+          }
+        </div>
+        <p><strong>Use Case:</strong> Apply consistent typography to multiple element types</p>
+      </div>
+
+      <h3>Advanced Selector Types</h3>
+
+      <div class="eventCard">
+        <h4>6. Descendant Selector (space)</h4>
+        <p>Selects elements that are descendants of another element.</p>
+        <div class="code-example">
+          .exercise-section h3 {<br>
+          &nbsp;&nbsp;color: #764ba2;<br>
+          }
+        </div>
+        <p><strong>Use Case:</strong> Style headings only inside specific containers</p>
+      </div>
+
+      <div class="eventCard">
+        <h4>7. Child Selector (>)</h4>
+        <p>Selects elements that are direct children of another element.</p>
+        <div class="code-example">
+          .exercise-section > h2 {<br>
+          &nbsp;&nbsp;border-bottom: 3px solid #667eea;<br>
+          }
+        </div>
+        <p><strong>Use Case:</strong> Target only direct children, not nested descendants</p>
+      </div>
+
+      <div class="eventCard">
+        <h4>8. Attribute Selector ([])</h4>
+        <p>Selects elements based on specific attributes.</p>
+        <div class="code-example">
+          input[type="text"] {<br>
+          &nbsp;&nbsp;padding: 0.75rem;<br>
+          &nbsp;&nbsp;border: 1px solid #ddd;<br>
+          }
+        </div>
+        <p><strong>Use Case:</strong> Style specific input types or elements with particular attributes</p>
+      </div>
+
+      <div class="eventCard">
+        <h4>9. Pseudo-class Selectors (:)</h4>
+        <p>Selects elements in a specific state.</p>
+        <div class="code-example">
+          a:hover {<br>
+          &nbsp;&nbsp;color: #764ba2;<br>
+          }<br>
+          <br>
+          a:visited {<br>
+          &nbsp;&nbsp;color: #ddd;<br>
+          }
+        </div>
+        <p><strong>Common pseudo-classes:</strong> :hover, :active, :visited, :focus, :first-child, :last-child, :nth-child()</p>
+      </div>
+
+      <h3>Selector Specificity Comparison</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Selector Type</th>
+            <th>Example</th>
+            <th>Specificity Points</th>
+            <th>Use Frequency</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Element</td>
+            <td>h2, p, div</td>
+            <td>1</td>
+            <td>Very Common</td>
+          </tr>
+          <tr>
+            <td>Class</td>
+            <td>.eventCard</td>
+            <td>10</td>
+            <td>Very Common</td>
+          </tr>
+          <tr>
+            <td>ID</td>
+            <td>#mainHeader</td>
+            <td>100</td>
+            <td>Rare</td>
+          </tr>
+          <tr>
+            <td>Inline Style</td>
+            <td>style="color: red"</td>
+            <td>1000</td>
+            <td>Avoid!</td>
+          </tr>
+          <tr>
+            <td>!important</td>
+            <td>color: red !important;</td>
+            <td>Highest</td>
+            <td>Emergency Only</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Live Examples on This Page</h3>
+      <p class="intro-text">Study the following elements to see different selector types in action:</p>
+
+      <div class="selector-demo">
+        <h4 style="color: #667eea;">This heading (h2) is styled using element selector</h4>
+        <p>This paragraph is styled with grouping selector (h3, p)</p>
+      </div>
+
+      <div class="selector-demo">
+        <div class="eventCard">
+          This div uses the <strong>.eventCard</strong> class selector
+        </div>
+      </div>
+
+      <div class="selector-demo">
+        <p>This paragraph is a <strong>descendant</strong> of .exercise-section, so it gets section-specific styling</p>
+      </div>
+
+      <h3>Best Practice Guidelines</h3>
+      <ul class="feature-list">
+        <li>Use <strong>element selectors</strong> for global styling (h1, p, body)</li>
+        <li>Use <strong>class selectors</strong> for reusable components</li>
+        <li>Use <strong>ID selectors</strong> sparingly for unique page sections</li>
+        <li>Avoid <strong>inline styles</strong> whenever possible</li>
+        <li>Keep <strong>specificity low</strong> to avoid conflicts</li>
+        <li>Use <strong>descendant/child selectors</strong> for context-specific styling</li>
+        <li>Prefer <strong>classes</strong> over IDs for styling (IDs are for JavaScript)</li>
+      </ul>
+
+      <h3>Challenge</h3>
+      <div class="colored-box" style="background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);">
+        <p style="color: white; margin: 0;">
+          <strong>Your Task:</strong> Create an HTML page with multiple event cards and use different selector types:
+          <br>
+          • Use universal selector to reset margins<br>
+          • Use element selector for all cards<br>
+          • Use class selectors for different card types<br>
+          • Use pseudo-classes for hover effects<br>
+          • Use descendant selectors for nested elements<br>
+          Open DevTools (F12) and use Inspector to see which selectors apply to each element!
+        </p>
+      </div>
+
+      <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+        <a href="exercise-2-syntax.html" class="cta-button">← Previous: Exercise 2</a>
+        <a href="exercise-4-colors-background.html" class="cta-button" style="float: right;">Next: Exercise 4 →</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 CSS3 Exercises - Community Event Portal</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 2: CSS Syntax and Comments - CSS3 Exercises</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div id="mainHeader">
+      <h1>Exercise 2: CSS Syntax and Comments</h1>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="exercise-1-css-methods.html">Exercise 1</a></li>
+      <li><a href="exercise-2-syntax.html">Exercise 2</a></li>
+      <li><a href="exercise-3-selectors.html">Exercise 3</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section class="exercise-section">
+      <h2>Exercise 2: CSS Syntax and Comments</h2>
+      
+      <h3>Scenario</h3>
+      <p class="intro-text">
+        You've joined a team and need to understand and maintain a large stylesheet. Clean, readable CSS with proper 
+        structure and comments is essential for team collaboration.
+      </p>
+
+      <h3>Objective</h3>
+      <p class="intro-text">
+        Write clean, readable CSS with proper structure, consistent indentation, and descriptive comments for easy maintenance.
+      </p>
+
+      <h3>CSS Syntax Basics</h3>
+      <div class="eventCard">
+        <h4>Basic Syntax Structure</h4>
+        <div class="code-example">
+          selector {<br>
+          &nbsp;&nbsp;property: value;<br>
+          &nbsp;&nbsp;property: value;<br>
+          }
+        </div>
+        <p><strong>Example:</strong></p>
+        <div class="code-example">
+          h1 {<br>
+          &nbsp;&nbsp;color: #667eea;<br>
+          &nbsp;&nbsp;font-size: 2rem;<br>
+          &nbsp;&nbsp;margin-bottom: 1rem;<br>
+          }
+        </div>
+      </div>
+
+      <h3>Comments in CSS</h3>
+      <div class="eventCard">
+        <h4>Single-line Comments</h4>
+        <div class="code-example">
+          /* Style for main CTA button */
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>Multi-line Comments</h4>
+        <div class="code-example">
+          /*<br>
+          &nbsp;&nbsp;Section: Header and Navigation<br>
+          &nbsp;&nbsp;Purpose: Style the top navigation bar<br>
+          &nbsp;&nbsp;Author: Your Name<br>
+          &nbsp;&nbsp;Last Updated: 2024<br>
+          */
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>Section Comments</h4>
+        <div class="code-example">
+          /* ============================================<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;HEADER STYLES<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;============================================ */<br>
+          <br>
+          header {<br>
+          &nbsp;&nbsp;background-color: #667eea;<br>
+          }
+        </div>
+      </div>
+
+      <h3>Formatting Guidelines</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Guideline</th>
+            <th>Good ✓</th>
+            <th>Bad ✗</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Indentation</strong></td>
+            <td>Use 2 or 4 spaces consistently</td>
+            <td>Mixing tabs and spaces</td>
+          </tr>
+          <tr>
+            <td><strong>Spacing</strong></td>
+            <td>Space after property colon</td>
+            <td>No space: color:#667eea;</td>
+          </tr>
+          <tr>
+            <td><strong>Line Breaks</strong></td>
+            <td>One property per line</td>
+            <td>Multiple properties on one line</td>
+          </tr>
+          <tr>
+            <td><strong>Comments</strong></td>
+            <td>Descriptive comments above selectors</td>
+            <td>Vague or no comments</td>
+          </tr>
+          <tr>
+            <td><strong>Organization</strong></td>
+            <td>Group related styles together</td>
+            <td>Random, scattered rules</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Example of Well-Formatted CSS</h3>
+      <div class="code-example">
+        /* ============================================<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;BUTTON STYLES<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;============================================ */<br>
+        <br>
+        /* Style for main CTA button */<br>
+        .cta-button {<br>
+        &nbsp;&nbsp;background-color: #007BFF;<br>
+        &nbsp;&nbsp;color: white;<br>
+        &nbsp;&nbsp;padding: 0.75rem 1.5rem;<br>
+        &nbsp;&nbsp;border: none;<br>
+        &nbsp;&nbsp;border-radius: 4px;<br>
+        &nbsp;&nbsp;cursor: pointer;<br>
+        &nbsp;&nbsp;font-size: 1rem;<br>
+        &nbsp;&nbsp;transition: background-color 0.3s ease;<br>
+        }<br>
+        <br>
+        /* Hover state for CTA button */<br>
+        .cta-button:hover {<br>
+        &nbsp;&nbsp;background-color: #0056b3;<br>
+        }
+      </div>
+
+      <h3>Real-World Example from This Project</h3>
+      <p>Look at the external stylesheet <span class="highlight">css/styles.css</span> to see how it's organized with:</p>
+      <ul class="feature-list">
+        <li>Section headers with visual separation</li>
+        <li>Descriptive comments above related rule groups</li>
+        <li>Consistent indentation and spacing</li>
+        <li>Logical grouping of related styles</li>
+        <li>Media queries at the end for responsive design</li>
+      </ul>
+
+      <h3>Best Practice Checklist</h3>
+      <div class="eventCard">
+        <ul class="feature-list">
+          <li>Comment every major section of CSS</li>
+          <li>Use consistent indentation (2 or 4 spaces)</li>
+          <li>One property per line</li>
+          <li>Space after property colons</li>
+          <li>Group related styles together</li>
+          <li>Avoid overly specific selectors</li>
+          <li>Use meaningful class and ID names</li>
+          <li>Keep comments up-to-date with code changes</li>
+        </ul>
+      </div>
+
+      <h3>Challenge</h3>
+      <div class="colored-box" style="background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);">
+        <p style="color: white; margin: 0;">
+          <strong>Your Task:</strong> Open <span class="highlight">css/styles.css</span> and study how it's organized. 
+          Then, create your own CSS file with at least 3 different styled elements. Make sure to:
+          <br>
+          • Add section headers<br>
+          • Comment each major style group<br>
+          • Use consistent formatting<br>
+          • Apply it to an HTML page
+        </p>
+      </div>
+
+      <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+        <a href="exercise-1-css-methods.html" class="cta-button">← Previous: Exercise 1</a>
+        <a href="exercise-3-selectors.html" class="cta-button" style="float: right;">Next: Exercise 3 →</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 CSS3 Exercises - Community Event Portal</p>
+  </footer>
+</body>
+</html>

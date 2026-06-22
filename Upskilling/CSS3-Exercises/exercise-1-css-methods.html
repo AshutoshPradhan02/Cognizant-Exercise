@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 1: Why CSS? - CSS3 Exercises</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Exercise 1: Inline style for demonstration */
+    .inline-red-heading {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div id="mainHeader">
+      <h1>Exercise 1: Why CSS? Inline vs. Internal vs. External</h1>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="exercise-1-css-methods.html">Exercise 1</a></li>
+      <li><a href="exercise-2-syntax.html">Exercise 2</a></li>
+      <li><a href="exercise-3-selectors.html">Exercise 3</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section class="exercise-section">
+      <h2>Exercise 1: Why CSS? Inline vs. Internal vs. External</h2>
+      
+      <h3>Scenario</h3>
+      <p class="intro-text">
+        The designer wants you to experiment with different ways to apply styles to understand the pros and cons of each method.
+      </p>
+
+      <h3>Objective</h3>
+      <p class="intro-text">
+        Understand the three CSS inclusion methods and their impact on code organization and maintainability.
+      </p>
+
+      <h3>Task Breakdown</h3>
+      <div class="eventCard">
+        <h4>1. Apply Inline Style</h4>
+        <p>Make one heading red using an inline style attribute.</p>
+        <h5 style="color: red;">This heading uses an inline style (color: red)</h5>
+        <p class="code-example">
+          &lt;h5 style="color: red;"&gt;This heading uses an inline style&lt;/h5&gt;
+        </p>
+      </div>
+
+      <div class="eventCard">
+        <h4>2. Use Embedded &lt;style&gt; Tag (Internal CSS)</h4>
+        <p>Define body background color in the &lt;head&gt; section using &lt;style&gt; tag.</p>
+        <p class="code-example">
+          &lt;style&gt;<br>
+          &nbsp;&nbsp;body {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;background-color: #f9f9f9;<br>
+          &nbsp;&nbsp;}<br>
+          &lt;/style&gt;
+        </p>
+        <p><strong>Current page:</strong> Notice the light gray background color applied to this page.</p>
+      </div>
+
+      <div class="eventCard">
+        <h4>3. Link External Stylesheet</h4>
+        <p>Link an external stylesheet and move reusable styles there.</p>
+        <p class="code-example">
+          &lt;link rel="stylesheet" href="css/styles.css"&gt;
+        </p>
+        <p><strong>Current page:</strong> All reusable styles from <span class="highlight">css/styles.css</span> are applied to this page, including header, navigation, and all styling classes.</p>
+      </div>
+
+      <h3>Comparison Table</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Syntax</th>
+            <th>Pros</th>
+            <th>Cons</th>
+            <th>Use Case</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Inline</strong></td>
+            <td>&lt;element style="..."&gt;</td>
+            <td>Quick testing, immediate effect</td>
+            <td>Not reusable, hard to maintain, clutters HTML</td>
+            <td>Quick fixes, testing only</td>
+          </tr>
+          <tr>
+            <td><strong>Internal (Embedded)</strong></td>
+            <td>&lt;style&gt;...&lt;/style&gt;</td>
+            <td>Centralized for single page, cleaner than inline</td>
+            <td>Not reusable across pages, increases HTML file size</td>
+            <td>Single-page projects</td>
+          </tr>
+          <tr>
+            <td><strong>External</strong></td>
+            <td>&lt;link href="styles.css"&gt;</td>
+            <td>Highly reusable, cacheable, best for SEO, clean HTML</td>
+            <td>Requires separate file, one more HTTP request</td>
+            <td>Professional projects, multi-page sites</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Best Practice Comment Structure</h3>
+      <p>When using external stylesheets, organize your CSS with comments:</p>
+      <div class="code-example">
+        /* ---- Header Styles ---- */<br>
+        header {<br>
+        &nbsp;&nbsp;background-color: #667eea;<br>
+        &nbsp;&nbsp;color: white;<br>
+        }<br>
+        <br>
+        /* ---- Navigation Styles ---- */<br>
+        nav {<br>
+        &nbsp;&nbsp;background-color: #333;<br>
+        }
+      </div>
+
+      <h3>Key Takeaways</h3>
+      <ul class="feature-list">
+        <li>Use <strong>inline styles</strong> only for quick testing or single-use exceptions</li>
+        <li>Use <strong>internal styles</strong> for single-page applications or templates</li>
+        <li>Use <strong>external stylesheets</strong> for professional, maintainable projects</li>
+        <li>Always comment your CSS to label sections and improve readability</li>
+        <li>External CSS files are <span class="highlight">cached by browsers</span>, improving performance</li>
+      </ul>
+
+      <h3>Challenge</h3>
+      <div class="colored-box" style="background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);">
+        <p style="color: white; margin: 0;">
+          <strong>Your Task:</strong> Create a new HTML file with both inline, internal, and external CSS applied. 
+          Use your browser's DevTools (F12) to inspect each element and see where its styles are coming from. 
+          Notice how external CSS takes precedence in the cascade.
+        </p>
+      </div>
+
+      <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+        <a href="exercise-2-syntax.html" class="cta-button">Next: Exercise 2 - CSS Syntax and Comments →</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 CSS3 Exercises - Community Event Portal</p>
+  </footer>
+</body>
+</html>

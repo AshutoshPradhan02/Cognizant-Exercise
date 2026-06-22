@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upskilling Program - Cognizant Exercise</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    header {
+      text-align: center;
+      color: white;
+      margin-bottom: 3rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .course-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .course-card h2 {
+      color: #667eea;
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    .course-card .badge {
+      display: inline-block;
+      background-color: #e8eef7;
+      color: #667eea;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .course-card p {
+      color: #666;
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+
+    .course-info {
+      display: flex;
+      gap: 1.5rem;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    .course-info span {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #667eea;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn:hover {
+      background-color: #764ba2;
+    }
+
+    footer {
+      text-align: center;
+      color: white;
+      margin-top: 3rem;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #667eea;
+    }
+
+    .stat-label {
+      color: #666;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .course-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎓 Cognizant Upskilling Program</h1>
+      <p>Professional Web Development Training Course</p>
+    </header>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-number">2</div>
+        <div class="stat-label">Learning Modules</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">21</div>
+        <div class="stat-label">Total Exercises</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Hands-on Learning</div>
+      </div>
+    </div>
+
+    <div class="course-grid">
+      <!-- Bootstrap Exercises -->
+      <div class="course-card">
+        <span class="badge">Module 1</span>
+        <h2>Bootstrap 5 Exercises</h2>
+        <p>
+          Master the world's most popular CSS framework. Learn responsive design, components, 
+          and build professional layouts quickly with Bootstrap 5.
+        </p>
+        <div class="course-info">
+          <span>📚 11 Exercises</span>
+          <span>⏱️ 10-15 hours</span>
+        </div>
+        <a href="Bootstrap-Exercises/index.html" class="btn">Start Module</a>
+      </div>
+
+      <!-- CSS3 Exercises -->
+      <div class="course-card">
+        <span class="badge">Module 2</span>
+        <h2>CSS3 Exercises</h2>
+        <p>
+          Build foundational CSS skills from basics to advanced. Learn selectors, layouts, responsive design, 
+          and professional debugging techniques for the Community Event Portal project.
+        </p>
+        <div class="course-info">
+          <span>📚 11 Exercises</span>
+          <span>⏱️ 12-18 hours</span>
+        </div>
+        <a href="CSS3-Exercises/index.html" class="btn">Start Module</a>
+      </div>
+    </div>
+
+    <footer>
+      <p><strong>Welcome to the Upskilling Program!</strong></p>
+      <p style="margin-top: 1rem; font-size: 0.95rem;">
+        Each module contains carefully structured exercises with theory, examples, and challenges. 
+        Complete them sequentially to build professional-grade web development skills.
+      </p>
+      <p style="margin-top: 1rem; opacity: 0.8; font-size: 0.9rem;">
+        © 2024 Cognizant Upskilling Program | Part of Professional Development Initiative
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 10: Responsive Web Design - CSS3 Exercises</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Exercise 10: Responsive Design Demonstrations */
+    
+    .responsive-demo-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .responsive-item {
+      background-color: #f0f4ff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 2px solid #667eea;
+      text-align: center;
+    }
+
+    .responsive-hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 3rem 1.5rem;
+      text-align: center;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+
+    .font-responsive {
+      font-size: clamp(1rem, 5vw, 2rem);
+      font-weight: bold;
+      color: #667eea;
+    }
+
+    .responsive-image {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .flex-responsive {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .flex-item {
+      flex: 1;
+      min-width: 150px;
+      background-color: #f0f4ff;
+      padding: 1rem;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .container-relative {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .responsive-hero {
+        padding: 2rem 1rem;
+      }
+
+      .flex-responsive {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .responsive-hero {
+        padding: 1.5rem 1rem;
+      }
+
+      .font-responsive {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div id="mainHeader">
+      <h1>Exercise 10: Responsive Web Design with Media Queries</h1>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="exercise-9-multi-columns.html">Exercise 9</a></li>
+      <li><a href="exercise-10-responsive.html">Exercise 10</a></li>
+      <li><a href="exercise-11-dev-tools.html">Exercise 11</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section class="exercise-section">
+      <h2>Exercise 10: Responsive Web Design with Media Queries</h2>
+      
+      <h3>Scenario</h3>
+      <p class="intro-text">
+        Users will access the community event portal on phones, tablets, and desktops. 
+        Your site needs to be fully responsive and look great on all devices.
+      </p>
+
+      <h3>Objective</h3>
+      <p class="intro-text">
+        Create responsive layouts using media queries, flexible units, and modern CSS techniques 
+        that adapt beautifully to any screen size.
+      </p>
+
+      <h3>Media Query Basics</h3>
+
+      <div class="eventCard">
+        <h4>Media Query Syntax</h4>
+        <div class="code-example">
+          @media (max-width: 768px) {<br>
+          &nbsp;&nbsp;/* Styles for screens 768px and smaller */<br>
+          }<br>
+          <br>
+          @media (min-width: 769px) and (max-width: 1024px) {<br>
+          &nbsp;&nbsp;/* Styles for tablets */<br>
+          }
+        </div>
+      </div>
+
+      <h3>Common Breakpoints</h3>
+      <div class="eventCard">
+        <table>
+          <thead>
+            <tr>
+              <th>Device Type</th>
+              <th>Screen Width</th>
+              <th>Media Query</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mobile (phones)</td>
+              <td>320px - 480px</td>
+              <td>@media (max-width: 480px)</td>
+            </tr>
+            <tr>
+              <td>Tablet (small)</td>
+              <td>481px - 768px</td>
+              <td>@media (max-width: 768px)</td>
+            </tr>
+            <tr>
+              <td>Tablet (large)</td>
+              <td>769px - 1024px</td>
+              <td>@media (max-width: 1024px)</td>
+            </tr>
+            <tr>
+              <td>Desktop</td>
+              <td>1025px and above</td>
+              <td>@media (min-width: 1025px)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Mobile-First Approach</h3>
+
+      <div class="eventCard">
+        <h4>Best Practice: Start Mobile, Add Complexity</h4>
+        <div class="code-example">
+          /* Default - Mobile (320px and up) */<br>
+          body {<br>
+          &nbsp;&nbsp;font-size: 14px;<br>
+          }<br>
+          <br>
+          .grid {<br>
+          &nbsp;&nbsp;display: block;  /* stack on mobile */<br>
+          }<br>
+          <br>
+          /* Tablet (768px and up) */<br>
+          @media (min-width: 768px) {<br>
+          &nbsp;&nbsp;body {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;font-size: 16px;<br>
+          &nbsp;&nbsp;}<br>
+          &nbsp;&nbsp;.grid {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: repeat(2, 1fr);<br>
+          &nbsp;&nbsp;}<br>
+          }<br>
+          <br>
+          /* Desktop (1024px and up) */<br>
+          @media (min-width: 1024px) {<br>
+          &nbsp;&nbsp;.grid {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: repeat(3, 1fr);<br>
+          &nbsp;&nbsp;}<br>
+          }
+        </div>
+      </div>
+
+      <h3>Responsive Units</h3>
+
+      <div class="eventCard">
+        <h4>Flexible Sizing Units</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Unit</th>
+              <th>Meaning</th>
+              <th>Use Case</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>%</strong></td>
+              <td>Percentage of parent</td>
+              <td>Widths and flexible layouts</td>
+              <td>width: 90%;</td>
+            </tr>
+            <tr>
+              <td><strong>vw</strong></td>
+              <td>% of viewport width</td>
+              <td>Hero sections, full-width</td>
+              <td>width: 100vw;</td>
+            </tr>
+            <tr>
+              <td><strong>vh</strong></td>
+              <td>% of viewport height</td>
+              <td>Full-screen sections</td>
+              <td>height: 100vh;</td>
+            </tr>
+            <tr>
+              <td><strong>em</strong></td>
+              <td>Relative to parent font-size</td>
+              <td>Typography hierarchy</td>
+              <td>font-size: 1.5em;</td>
+            </tr>
+            <tr>
+              <td><strong>rem</strong></td>
+              <td>Relative to root font-size</td>
+              <td>Consistent spacing</td>
+              <td>margin: 2rem;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Responsive Layout Examples</h3>
+
+      <div class="eventCard">
+        <h4>Hero Section (Responsive)</h4>
+        <div class="responsive-hero">
+          <h2 class="font-responsive">Welcome to Community Events</h2>
+          <p>Resize the window to see the heading size adjust responsively using clamp()!</p>
+        </div>
+        <div class="code-example">
+          .font-responsive {<br>
+          &nbsp;&nbsp;font-size: clamp(1rem, 5vw, 2rem);<br>
+          }<br>
+          /* min-size | preferred-size | max-size */<br>
+          /* scales smoothly between 1rem and 2rem based on 5vw */
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>Grid Layout (Auto-Responsive)</h4>
+        <p>This grid automatically adjusts columns based on available space:</p>
+        <div class="responsive-demo-container">
+          <div class="responsive-item">
+            <h4>Mobile</h4>
+            <p>Single column on small screens</p>
+          </div>
+          <div class="responsive-item">
+            <h4>Tablet</h4>
+            <p>2-3 columns on medium screens</p>
+          </div>
+          <div class="responsive-item">
+            <h4>Desktop</h4>
+            <p>Multiple columns on large screens</p>
+          </div>
+          <div class="responsive-item">
+            <h4>Flexible</h4>
+            <p>Uses auto-fit for automatic responsiveness</p>
+          </div>
+        </div>
+        <div class="code-example">
+          .grid {<br>
+          &nbsp;&nbsp;display: grid;<br>
+          &nbsp;&nbsp;grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));<br>
+          &nbsp;&nbsp;gap: 1.5rem;<br>
+          }<br>
+          /* Automatically adjusts number of columns */<br>
+          /* Each column is at least 250px, but grows to fill space */
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>Navigation Bar (Stack on Mobile)</h4>
+        <div class="code-example">
+          /* Desktop - horizontal nav */<br>
+          nav ul {<br>
+          &nbsp;&nbsp;display: flex;<br>
+          &nbsp;&nbsp;gap: 2rem;<br>
+          }<br>
+          <br>
+          /* Mobile - vertical nav */<br>
+          @media (max-width: 768px) {<br>
+          &nbsp;&nbsp;nav ul {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;flex-direction: column;  /* stack vertically */<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 0;<br>
+          &nbsp;&nbsp;}<br>
+          &nbsp;&nbsp;nav ul li a {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;display: block;<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;padding: 1rem;<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;border-bottom: 1px solid #ddd;<br>
+          &nbsp;&nbsp;}<br>
+          }
+        </div>
+      </div>
+
+      <h3>Responsive Typography</h3>
+
+      <div class="eventCard">
+        <div class="code-example">
+          /* Desktop */<br>
+          h1 { font-size: 2.5rem; }<br>
+          p { font-size: 1rem; }<br>
+          <br>
+          /* Tablet */<br>
+          @media (max-width: 1024px) {<br>
+          &nbsp;&nbsp;h1 { font-size: 2rem; }<br>
+          &nbsp;&nbsp;p { font-size: 0.95rem; }<br>
+          }<br>
+          <br>
+          /* Mobile */<br>
+          @media (max-width: 768px) {<br>
+          &nbsp;&nbsp;h1 { font-size: 1.5rem; }<br>
+          &nbsp;&nbsp;p { font-size: 0.9rem; }<br>
+          }
+        </div>
+      </div>
+
+      <h3>Testing Responsive Design</h3>
+
+      <div class="eventCard">
+        <h4>Chrome DevTools Device Toolbar</h4>
+        <ol class="feature-list" style="list-style-type: decimal; margin-left: 2rem;">
+          <li>Press <strong>F12</strong> to open DevTools</li>
+          <li>Click the <strong>Device Toolbar icon</strong> (top left)</li>
+          <li>Select different devices or custom dimensions</li>
+          <li>Test how your layout responds to different screen sizes</li>
+          <li>Check breakpoints and media queries in the Styles tab</li>
+        </ol>
+      </div>
+
+      <h3>Responsive Best Practices</h3>
+      <ul class="feature-list">
+        <li><strong>Mobile-first:</strong> Start with mobile design, enhance for larger screens</li>
+        <li><strong>Use relative units:</strong> %, em, rem instead of fixed pixels</li>
+        <li><strong>Test on real devices:</strong> Simulators don't catch everything</li>
+        <li><strong>Use flexbox and grid:</strong> For flexible layouts</li>
+        <li><strong>Optimize images:</strong> Use srcset for different resolutions</li>
+        <li><strong>Touch-friendly:</strong> Min 44px height for touch targets</li>
+        <li><strong>Readable text:</strong> Min 16px font size on mobile</li>
+        <li><strong>Viewport meta tag:</strong> Always include in &lt;head&gt;</li>
+      </ul>
+
+      <h3>Essential Viewport Meta Tag</h3>
+      <div class="code-example">
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+      </div>
+      <p>This MUST be in your &lt;head&gt; for responsive design to work properly!</p>
+
+      <h3>Challenge</h3>
+      <div class="colored-box" style="background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);">
+        <p style="color: white; margin: 0;">
+          <strong>Your Task:</strong> Build a fully responsive event portal page with:
+          <br>
+          • Mobile-first design that stacks on small screens<br>
+          • 2-3 breakpoints (mobile, tablet, desktop)<br>
+          • Responsive navigation that collapses on mobile<br>
+          • Flexible typography using units like rem and clamp()<br>
+          • Grid/flexbox for responsive layouts<br>
+          Test in Chrome DevTools by resizing the window and using device preview!
+        </p>
+      </div>
+
+      <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+        <a href="exercise-9-multi-columns.html" class="cta-button">← Previous: Exercise 9</a>
+        <a href="exercise-11-dev-tools.html" class="cta-button" style="float: right;">Next: Exercise 11 →</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 CSS3 Exercises - Community Event Portal</p>
+  </footer>
+</body>
+</html>

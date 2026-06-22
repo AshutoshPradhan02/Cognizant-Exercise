@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 9: Multi-Columns - CSS3 Exercises</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Exercise 9: Multi-column Demonstrations */
+    .two-column-article {
+      column-count: 2;
+      column-gap: 2rem;
+      column-rule: 1px solid #ddd;
+      text-align: justify;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    .three-column-article {
+      column-count: 3;
+      column-gap: 1.5rem;
+      column-rule: 2px dotted #667eea;
+      text-align: justify;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    .responsive-columns {
+      column-count: auto;
+      column-width: 300px;
+      column-gap: 2rem;
+      text-align: justify;
+      color: #555;
+    }
+
+    .column-break-demo {
+      column-count: 2;
+      column-gap: 2rem;
+    }
+
+    .column-break-demo h3 {
+      column-span: all;  /* span across all columns */
+      color: #667eea;
+      border-bottom: 2px solid #667eea;
+      padding-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .two-column-article,
+      .three-column-article {
+        column-count: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div id="mainHeader">
+      <h1>Exercise 9: Multiple Columns in Text</h1>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="exercise-8-box-model.html">Exercise 8</a></li>
+      <li><a href="exercise-9-multi-columns.html">Exercise 9</a></li>
+      <li><a href="exercise-10-responsive.html">Exercise 10</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section class="exercise-section">
+      <h2>Exercise 9: Multiple Columns in Text</h2>
+      
+      <h3>Scenario</h3>
+      <p class="intro-text">
+        The community bulletin needs to be displayed like a newspaper with multiple columns. 
+        CSS3 multi-column layout allows you to create newspaper-style text flow.
+      </p>
+
+      <h3>Objective</h3>
+      <p class="intro-text">
+        Use CSS3 multi-column layout properties to create professional newspaper-style text presentations.
+      </p>
+
+      <h3>Multi-Column CSS Properties</h3>
+
+      <div class="eventCard">
+        <h4>column-count</h4>
+        <p>Specifies the number of columns to divide content into:</p>
+        <div class="code-example">
+          column-count: 2;   /* divide into 2 columns */<br>
+          column-count: 3;   /* divide into 3 columns */<br>
+          column-count: 4;
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>column-gap</h4>
+        <p>Space between columns (like gutter in newspaper):</p>
+        <div class="code-example">
+          column-gap: 2rem;    /* 2rem space between columns */<br>
+          column-gap: 30px;    /* 30 pixels */<br>
+          column-gap: normal;  /* browser default (usually 1em) */
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>column-rule</h4>
+        <p>Visual separator line between columns (similar to border):</p>
+        <div class="code-example">
+          column-rule: 1px solid gray;<br>
+          column-rule: 2px dashed #667eea;<br>
+          column-rule: 3px dotted #764ba2;
+        </div>
+      </div>
+
+      <h3>2-Column Article Example</h3>
+      <div class="eventCard">
+        <div class="two-column-article">
+          <strong>Community Newsletter - March 2024</strong><br><br>
+          Welcome to March's community newsletter! This month has been filled with exciting events and opportunities 
+          for our neighbors to connect. We're thrilled to share updates about recent activities and upcoming gatherings 
+          that will bring our community closer together.
+          <br><br>
+          The Community Potluck last month was a tremendous success with over 40 families attending. 
+          Everyone brought delicious dishes representing their cultural backgrounds, making it a truly diverse 
+          and enriching experience. Special thanks to the volunteers who helped set up and clean up. 
+          Mark your calendars for next month's event on April 19th!
+          <br><br>
+          Our local youth center has launched a new after-school program focusing on STEM education. 
+          High school students can now volunteer as mentors, earning community service hours while making 
+          a difference in the lives of younger children. Applications are open through March 31st.
+          <br><br>
+          Upcoming events this month include the Community Garden Workshop (March 18), Book Club Meeting (March 22), 
+          and the Spring Cleanup Initiative (March 25). Whether you're interested in gardening, reading, or environmental 
+          stewardship, there's something for everyone. Please check our website for times and locations.
+        </div>
+      </div>
+
+      <h3>3-Column Article Example</h3>
+      <div class="eventCard">
+        <div class="three-column-article">
+          <strong>Extended News Article - Community Development</strong><br><br>
+          Our community has seen significant growth and positive changes over the past year. 
+          New businesses have opened downtown, creating local jobs and revitalizing our commercial district. 
+          The community development board has approved funding for street improvements and new public spaces.
+          <br><br>
+          The new community center, which opened in February, has already become a hub for activities. 
+          Classes range from yoga and fitness to art and music. Over 300 residents have already registered 
+          for spring classes. The center also hosts community meetings and social events on weekends.
+          <br><br>
+          Public transportation improvements are underway, with new bus routes planned for next summer. 
+          The city council approved funding for better bike lanes and pedestrian walkways. These infrastructure 
+          improvements will make our community more accessible and environmentally friendly.
+          <br><br>
+          Our schools continue to excel academically. This year's science fair attracted entries from 
+          over 200 students, showcasing incredible innovation and creativity. Several students have qualified 
+          for the state-level competition, representing our community with distinction.
+        </div>
+      </div>
+
+      <h3>Advanced Multi-Column Features</h3>
+
+      <div class="eventCard">
+        <h4>column-span</h4>
+        <p>Allow an element to span across all columns (like a headline):</p>
+        <div class="code-example">
+          .multi-column h3 {<br>
+          &nbsp;&nbsp;column-span: all;  /* spans across all columns */<br>
+          }
+        </div>
+        <div class="column-break-demo">
+          <h3>This heading spans across all columns!</h3>
+          <p>
+            The heading above uses column-span: all to span across all columns. 
+            This is perfect for section headers or important announcements that should 
+            break the column flow and draw attention. The text below continues to flow 
+            in multiple columns as normal.
+          </p>
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>column-width (Responsive Columns)</h4>
+        <p>Browser automatically determines number of columns based on available width:</p>
+        <div class="code-example">
+          column-count: auto;<br>
+          column-width: 300px;  /* each column is ~300px wide */<br>
+          column-gap: 2rem;
+        </div>
+        <p><strong>Result:</strong> On a 1200px wide screen, you'd get ~4 columns. On a 600px screen, you'd get 2 columns.</p>
+      </div>
+
+      <h3>Multi-Column Properties Summary</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Values</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>column-count</strong></td>
+            <td>number | auto</td>
+            <td>Fixed number of columns</td>
+          </tr>
+          <tr>
+            <td><strong>column-width</strong></td>
+            <td>length | auto</td>
+            <td>Minimum width of each column</td>
+          </tr>
+          <tr>
+            <td><strong>columns</strong></td>
+            <td>Shorthand</td>
+            <td>Set count and width together</td>
+          </tr>
+          <tr>
+            <td><strong>column-gap</strong></td>
+            <td>length | normal</td>
+            <td>Space between columns</td>
+          </tr>
+          <tr>
+            <td><strong>column-rule</strong></td>
+            <td>width style color</td>
+            <td>Divider line between columns</td>
+          </tr>
+          <tr>
+            <td><strong>column-span</strong></td>
+            <td>none | all</td>
+            <td>Span across all columns</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Use Cases for Multi-Column Layout</h3>
+      <ul class="feature-list">
+        <li><strong>News articles</strong> - Create newspaper-style layouts</li>
+        <li><strong>Blog posts</strong> - Make long-form content more readable</li>
+        <li><strong>Community newsletters</strong> - Professional publication style</li>
+        <li><strong>Book-like content</strong> - Traditional reading experience</li>
+        <li><strong>Case studies</strong> - Dense information in organized format</li>
+      </ul>
+
+      <h3>Responsive Multi-Column</h3>
+      <p>Make multi-column responsive with media queries:</p>
+      <div class="code-example">
+        /* Desktop - 3 columns */<br>
+        @media (min-width: 1024px) {<br>
+        &nbsp;&nbsp;.article {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;column-count: 3;<br>
+        &nbsp;&nbsp;}<br>
+        }<br>
+        <br>
+        /* Tablet - 2 columns */<br>
+        @media (min-width: 768px) and (max-width: 1023px) {<br>
+        &nbsp;&nbsp;.article {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;column-count: 2;<br>
+        &nbsp;&nbsp;}<br>
+        }<br>
+        <br>
+        /* Mobile - 1 column */<br>
+        @media (max-width: 767px) {<br>
+        &nbsp;&nbsp;.article {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;column-count: 1;<br>
+        &nbsp;&nbsp;}<br>
+        }
+      </div>
+
+      <h3>Browser Compatibility</h3>
+      <p>Multi-column layout is well-supported in all modern browsers:</p>
+      <ul class="feature-list">
+        <li>Chrome: Supported since 2012</li>
+        <li>Firefox: Supported since 2011</li>
+        <li>Safari: Supported since 2009</li>
+        <li>Edge: Fully supported</li>
+        <li>IE 10+: Partial support</li>
+      </ul>
+
+      <h3>Challenge</h3>
+      <div class="colored-box" style="background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);">
+        <p style="color: white; margin: 0;">
+          <strong>Your Task:</strong> Create a community bulletin or newsletter with:
+          <br>
+          • 2-3 column layout for main articles<br>
+          • Column rules to separate columns visually<br>
+          • Responsive columns that stack on mobile<br>
+          • Column-spanning headers for section titles<br>
+          • Justified text for professional appearance
+        </p>
+      </div>
+
+      <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+        <a href="exercise-8-box-model.html" class="cta-button">← Previous: Exercise 8</a>
+        <a href="exercise-10-responsive.html" class="cta-button" style="float: right;">Next: Exercise 10 →</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 CSS3 Exercises - Community Event Portal</p>
+  </footer>
+</body>
+</html>

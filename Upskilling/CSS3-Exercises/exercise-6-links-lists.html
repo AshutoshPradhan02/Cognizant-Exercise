@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 6: Links and List Styling - CSS3 Exercises</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Exercise 6: Links and Lists */
+
+    .styled-link {
+      color: #667eea;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .styled-link:link {
+      color: #667eea;
+    }
+
+    .styled-link:visited {
+      color: #764ba2;
+    }
+
+    .styled-link:hover {
+      color: #764ba2;
+      border-bottom: 2px solid #764ba2;
+      padding-bottom: 3px;
+    }
+
+    .styled-link:active {
+      color: #555;
+    }
+
+    .icon-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .icon-list li {
+      padding-left: 2rem;
+      position: relative;
+      margin-bottom: 1rem;
+      color: #555;
+    }
+
+    .icon-list li:before {
+      content: "★";
+      position: absolute;
+      left: 0;
+      color: #667eea;
+      font-size: 1.2rem;
+    }
+
+    .custom-list {
+      list-style-type: circle;
+      list-style-position: inside;
+      padding-left: 1rem;
+    }
+
+    .custom-list li {
+      margin-bottom: 0.5rem;
+      color: #555;
+    }
+
+    .inline-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .inline-list li {
+      display: inline-block;
+      background-color: #f0f4ff;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      border: 1px solid #667eea;
+    }
+
+    .inline-list li a {
+      color: #667eea;
+      text-decoration: none;
+    }
+
+    .inline-list li a:hover {
+      color: #764ba2;
+    }
+
+    .nav-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background-color: #f0f4ff;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .nav-menu li {
+      margin: 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .nav-menu li:last-child {
+      border-bottom: none;
+    }
+
+    .nav-menu li a {
+      display: block;
+      padding: 1rem;
+      color: #667eea;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-menu li a:hover {
+      background-color: #e0e8ff;
+      color: #764ba2;
+      border-left: 4px solid #764ba2;
+      padding-left: calc(1rem - 4px);
+    }
+
+    .breadcrumb {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+      display: flex;
+      gap: 0.5rem;
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    .breadcrumb li:not(:last-child)::after {
+      content: " /";
+      margin-left: 0.5rem;
+    }
+
+    .breadcrumb a {
+      color: #667eea;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div id="mainHeader">
+      <h1>Exercise 6: Link and List Styling</h1>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="exercise-5-typography.html">Exercise 5</a></li>
+      <li><a href="exercise-6-links-lists.html">Exercise 6</a></li>
+      <li><a href="exercise-7-tables.html">Exercise 7</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section class="exercise-section">
+      <h2>Exercise 6: Link and List Styling</h2>
+      
+      <h3>Scenario</h3>
+      <p class="intro-text">
+        The default blue links and bullet lists don't match the event portal's design. 
+        You need to customize links and lists to fit the branding and improve user experience.
+      </p>
+
+      <h3>Objective</h3>
+      <p class="intro-text">
+        Customize links with pseudo-classes and create styled lists for navigation and content.
+      </p>
+
+      <h3>Link Pseudo-classes</h3>
+
+      <div class="eventCard">
+        <h4>Link States</h4>
+        <p>Links have four pseudo-classes that represent different states:</p>
+        <div class="code-example">
+          a:link    { color: #667eea; }     /* unvisited link */<br>
+          a:visited { color: #764ba2; }     /* visited link */<br>
+          a:hover   { color: #764ba2; }     /* mouse over link */<br>
+          a:active  { color: #555; }        /* link being clicked */
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>Styled Link Example</h4>
+        <p>Here's a link with all pseudo-classes styled: <a href="#" class="styled-link">Hover over me!</a></p>
+        <p>The link changes color on hover and shows an underline animation.</p>
+      </div>
+
+      <div class="eventCard">
+        <h4>Focus and Focus-Visible (Accessibility)</h4>
+        <p>Important for keyboard navigation:</p>
+        <div class="code-example">
+          a:focus {<br>
+          &nbsp;&nbsp;outline: 2px solid #667eea;<br>
+          &nbsp;&nbsp;outline-offset: 2px;<br>
+          }<br>
+          <br>
+          a:focus-visible {<br>
+          &nbsp;&nbsp;box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);<br>
+          }
+        </div>
+      </div>
+
+      <h3>List Styling</h3>
+
+      <div class="eventCard">
+        <h4>List Style Type</h4>
+        <p>Change the marker used for lists:</p>
+        <div class="code-example">
+          list-style-type: disc;      /* solid circle (default) */<br>
+          list-style-type: circle;    /* hollow circle */<br>
+          list-style-type: square;    /* filled square */<br>
+          list-style-type: decimal;   /* numbers 1, 2, 3... */<br>
+          list-style-type: lower-alpha;  /* letters a, b, c... */<br>
+          list-style-type: none;      /* no marker */
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>Custom Styled List (with icons)</h4>
+        <p>Use CSS to create custom list markers:</p>
+        <ul class="icon-list">
+          <li>First feature item</li>
+          <li>Second feature item</li>
+          <li>Third feature item</li>
+        </ul>
+        <div class="code-example">
+          .icon-list li:before {<br>
+          &nbsp;&nbsp;content: "★";<br>
+          &nbsp;&nbsp;position: absolute;<br>
+          &nbsp;&nbsp;left: 0;<br>
+          &nbsp;&nbsp;color: #667eea;<br>
+          }
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>List Style Position</h4>
+        <p>Controls whether markers are inside or outside the list item:</p>
+        <div class="code-example">
+          list-style-position: outside;  /* default */<br>
+          list-style-position: inside;   /* marker inside text */<br>
+        </div>
+        <p><strong>Outside (default):</strong></p>
+        <ul style="list-style-position: outside;">
+          <li>Item with marker outside</li>
+        </ul>
+        <p><strong>Inside:</strong></p>
+        <ul style="list-style-position: inside;">
+          <li>Item with marker inside</li>
+        </ul>
+      </div>
+
+      <h3>Advanced List Styling</h3>
+
+      <div class="eventCard">
+        <h4>Tag-style Inline List</h4>
+        <p>Perfect for categories or tags:</p>
+        <ul class="inline-list">
+          <li><a href="#">Community</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Calendar</a></li>
+          <li><a href="#">Workshops</a></li>
+          <li><a href="#">Networking</a></li>
+        </ul>
+      </div>
+
+      <div class="eventCard">
+        <h4>Navigation Menu from List</h4>
+        <p>Transform lists into navigation menus:</p>
+        <ul class="nav-menu">
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Browse Events</a></li>
+          <li><a href="#">My Registrations</a></li>
+          <li><a href="#">Create Event</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>
+      </div>
+
+      <div class="eventCard">
+        <h4>Breadcrumb Navigation</h4>
+        <p>Guide users through page hierarchy:</p>
+        <ul class="breadcrumb">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Community Workshops</a></li>
+          <li>Django for Beginners</li>
+        </ul>
+      </div>
+
+      <h3>List Styling Summary Table</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Values</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>list-style-type</strong></td>
+            <td>disc, circle, square, decimal, none, etc.</td>
+            <td>Change marker style</td>
+          </tr>
+          <tr>
+            <td><strong>list-style-position</strong></td>
+            <td>outside, inside</td>
+            <td>Position of marker</td>
+          </tr>
+          <tr>
+            <td><strong>list-style-image</strong></td>
+            <td>url('image.png')</td>
+            <td>Custom image as marker</td>
+          </tr>
+          <tr>
+            <td><strong>list-style</strong></td>
+            <td>Shorthand for all three</td>
+            <td>Combine all properties</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Link Pseudo-classes Reference</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Pseudo-class</th>
+            <th>When Applied</th>
+            <th>Example Use</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>:link</td>
+            <td>Unvisited link</td>
+            <td>a:link { color: blue; }</td>
+          </tr>
+          <tr>
+            <td>:visited</td>
+            <td>Visited link</td>
+            <td>a:visited { color: purple; }</td>
+          </tr>
+          <tr>
+            <td>:hover</td>
+            <td>Mouse over link</td>
+            <td>a:hover { text-decoration: underline; }</td>
+          </tr>
+          <tr>
+            <td>:active</td>
+            <td>Link being clicked</td>
+            <td>a:active { color: red; }</td>
+          </tr>
+          <tr>
+            <td>:focus</td>
+            <td>Keyboard focus</td>
+            <td>a:focus { outline: 2px solid blue; }</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Best Practices</h3>
+      <ul class="feature-list">
+        <li>Always include <strong>:hover and :focus states</strong> for interactive elements</li>
+        <li>Make <strong>visited links visually distinct</strong> so users know where they've been</li>
+        <li>Remove bullet points from <strong>navigation lists</strong> with list-style: none</li>
+        <li>Use <strong>padding and margins</strong> to space list items</li>
+        <li>Remove default list styles with <strong>margin: 0; padding: 0;</strong></li>
+        <li>Use <strong>flex or grid</strong> to create horizontal lists</li>
+        <li>Ensure <strong>sufficient hit area</strong> for mobile (min 44px height)</li>
+      </ul>
+
+      <h3>Challenge</h3>
+      <div class="colored-box" style="background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);">
+        <p style="color: white; margin: 0;">
+          <strong>Your Task:</strong> Create a styled navigation system:
+          <br>
+          • Build a horizontal navigation menu from a list<br>
+          • Style links with hover and active states<br>
+          • Create a secondary vertical menu<br>
+          • Add a breadcrumb navigation<br>
+          • Ensure all interactive elements are keyboard accessible (use :focus)
+        </p>
+      </div>
+
+      <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+        <a href="exercise-5-typography.html" class="cta-button">← Previous: Exercise 5</a>
+        <a href="exercise-7-tables.html" class="cta-button" style="float: right;">Next: Exercise 7 →</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 CSS3 Exercises - Community Event Portal</p>
+  </footer>
+</body>
+</html>

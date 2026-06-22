@@ -1,22 +1,54 @@
-# Cognizant Bootstrap 5 Exercise Repository
+# Cognizant Upskilling Program - Exercise Repository
 
-This repository contains the complete Bootstrap 5 exercise solutions for the Cognizant training project. Each exercise page is mapped to the exact question numbers from the Bootstrap exercise set.
+A comprehensive training program with **22 total exercises** covering Bootstrap 5 and CSS3 frameworks. 
+Each module includes interactive demonstrations, code examples, and real-world project themes.
+
+## What's Included
+
+- **Module 1: Bootstrap 5 Exercises** - 11 comprehensive exercises using Bootstrap 5 framework
+- **Module 2: CSS3 Exercises** - 11 comprehensive CSS3 exercises with Community Event Portal theme
+- **Professional Documentation** - Theory, examples, and best practices for each exercise
+- **Developer Tools Guide** - Learn to debug and test like a professional
+- **Responsive Design** - Mobile-first approach and multi-device testing
+- **External Stylesheets** - Organized, commented CSS for real-world practice
 
 ## Repository structure
 
-- `Upskilling/01-Setup/`
-  - `Exercise-1.1-CDN/` - solves Exercise 1.1.
-  - `Exercise-1.2-LocalBootstrap/` - solves Exercise 1.2.
-- `Upskilling/Bootstrap-Exercises/` - organized main solution hub for Exercises 1 through 19.
+### Upskilling Program Overview
 
-## Exercise mapping and page guide
+The `Upskilling/` folder contains comprehensive training modules for professional web development:
 
-- `Upskilling/01-Setup/Exercise-1.1-CDN/index.html`
-  - Exercise 1.1: Basic HTML page with Bootstrap 5 CDN.
-- `Upskilling/01-Setup/Exercise-1.2-LocalBootstrap/index.html`
-  - Exercise 1.2: Local Bootstrap setup using downloaded files.
-- `Upskilling/Bootstrap-Exercises/index.html`
-  - Central hub linking all numbered solutions.
+- `Upskilling/index.html` - Main hub page linking all modules
+- `Upskilling/01-Setup/` - Bootstrap setup exercises
+  - `Exercise-1.1-CDN/` - solves Bootstrap Exercise 1.1
+  - `Exercise-1.2-LocalBootstrap/` - solves Bootstrap Exercise 1.2
+- `Upskilling/Bootstrap-Exercises/` - 11 comprehensive Bootstrap exercises
+- `Upskilling/CSS3-Exercises/` - 11 comprehensive CSS3 exercises
+
+## Module Details
+
+### Module 1: Bootstrap 5 Exercises (11 exercises)
+Complete framework training using Bootstrap 5 via CDN and local setup.
+
+- `Upskilling/01-Setup/Exercise-1.1-CDN/index.html` - Bootstrap 5 CDN setup
+- `Upskilling/01-Setup/Exercise-1.2-LocalBootstrap/index.html` - Local Bootstrap installation
+- `Upskilling/Bootstrap-Exercises/index.html` - Main hub for exercises 1-19
+
+### Module 2: CSS3 Exercises (11 exercises)
+Foundation to advanced CSS3 skills with real-world community portal project.
+
+- `Upskilling/CSS3-Exercises/index.html` - Main hub for all CSS3 exercises
+- `Upskilling/CSS3-Exercises/exercise-1-css-methods.html` - Exercise 1: CSS inclusion methods
+- `Upskilling/CSS3-Exercises/exercise-2-syntax.html` - Exercise 2: CSS syntax and comments
+- `Upskilling/CSS3-Exercises/exercise-3-selectors.html` - Exercise 3: CSS selectors
+- `Upskilling/CSS3-Exercises/exercise-4-colors-background.html` - Exercise 4: Colors and backgrounds
+- `Upskilling/CSS3-Exercises/exercise-5-typography.html` - Exercise 5: Typography and fonts
+- `Upskilling/CSS3-Exercises/exercise-6-links-lists.html` - Exercise 6: Links and lists styling
+- `Upskilling/CSS3-Exercises/exercise-7-tables.html` - Exercise 7: Table styling
+- `Upskilling/CSS3-Exercises/exercise-8-box-model.html` - Exercise 8: Box model fundamentals
+- `Upskilling/CSS3-Exercises/exercise-9-multi-columns.html` - Exercise 9: Multi-column layouts
+- `Upskilling/CSS3-Exercises/exercise-10-responsive.html` - Exercise 10: Responsive design
+- `Upskilling/CSS3-Exercises/exercise-11-dev-tools.html` - Exercise 11: Developer tools debugging
 - `setup.html`
   - Exercise 1.1, 1.2, 2.1, 2.2: Bootstrap CDN, local setup, file structure, and JS bundle.
 - `grid-layout.html`
@@ -42,15 +74,36 @@ This repository contains the complete Bootstrap 5 exercise solutions for the Cog
 
 ## Installation
 
+### For Bootstrap Exercises
+
 ```powershell
 cd "d:\Campus\Cognizant\Cognizant-Exercise\Upskilling\Bootstrap-Exercises"
 npm install
 npm run build:css
 ```
 
+### For CSS3 Exercises
+
+No installation needed - all exercises are standalone HTML files.
+
 ## How to use
 
-Open `Upskilling\Bootstrap-Exercises\index.html` in a browser. Each page clearly shows the exercise numbers and the exact questions it solves.
+### Starting Point
+Open `Upskilling\index.html` in your browser to see all available modules and exercises.
+
+### Module Structure
+- Each module has an `index.html` hub page listing all exercises
+- Click any exercise to start
+- Read the theory, study the examples, and complete the challenges
+- Use Chrome DevTools (F12) to inspect and debug
+
+### Bootstrap Exercises
+Start with `Upskilling\Bootstrap-Exercises\index.html`
+
+### CSS3 Exercises  
+Start with `Upskilling\CSS3-Exercises\index.html`
+
+Each page clearly shows which exercise it covers and what concepts it teaches.
 
 ## GitHub push
 

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 8: Box Model - CSS3 Exercises</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Exercise 8: Box Model Demonstrations */
+    .box-demo-container {
+      display: flex;
+      gap: 2rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .box-demo {
+      flex: 1;
+      min-width: 250px;
+      background-color: #f0f4ff;
+      border: 2px solid #667eea;
+      padding: 1.5rem;
+      margin: 1rem;
+      border-radius: 8px;
+    }
+
+    .box-with-border {
+      border: 3px solid #764ba2;
+      padding: 2rem;
+      margin: 1rem;
+      background-color: white;
+    }
+
+    .box-with-outline {
+      outline: 3px dashed #e74c3c;
+      outline-offset: 5px;
+      padding: 2rem;
+      margin: 1rem;
+      background-color: white;
+    }
+
+    .box-hidden {
+      visibility: hidden;
+      border: 2px solid red;
+      padding: 1rem;
+      background-color: #fff3cd;
+    }
+
+    .box-display-none {
+      display: none;
+      border: 2px solid red;
+      padding: 1rem;
+      background-color: #fff3cd;
+    }
+
+    .box-margin-demo {
+      background-color: #667eea;
+      padding: 1rem;
+      margin: 2rem;
+      color: white;
+    }
+
+    .box-padding-demo {
+      background-color: #764ba2;
+      padding: 3rem;
+      color: white;
+      text-align: center;
+    }
+
+    .visual-box-model {
+      max-width: 400px;
+      margin: 2rem auto;
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 1.5rem;
+    }
+
+    .margin-layer {
+      background-color: rgba(255, 200, 124, 0.3);
+      padding: 1.5rem;
+      border: 2px dashed #ff8c00;
+      margin-bottom: 1.5rem;
+    }
+
+    .margin-label {
+      color: #ff8c00;
+      font-weight: bold;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .border-layer {
+      background-color: rgba(230, 126, 34, 0.3);
+      padding: 1.5rem;
+      border: 3px solid #e67e22;
+      margin-bottom: 1.5rem;
+    }
+
+    .border-label {
+      color: #e67e22;
+      font-weight: bold;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .padding-layer {
+      background-color: rgba(155, 89, 182, 0.3);
+      padding: 1.5rem;
+      border: 2px dashed #9b59b6;
+      margin-bottom: 1.5rem;
+    }
+
+    .padding-label {
+      color: #9b59b6;
+      font-weight: bold;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .content-layer {
+      background-color: rgba(52, 152, 219, 0.3);
+      padding: 1rem;
+      border: 2px dashed #3498db;
+      text-align: center;
+    }
+
+    .content-label {
+      color: #3498db;
+      font-weight: bold;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div id="mainHeader">
+      <h1>Exercise 8: Box Model & Layout Control</h1>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="exercise-7-tables.html">Exercise 7</a></li>
+      <li><a href="exercise-8-box-model.html">Exercise 8</a></li>
+      <li><a href="exercise-9-multi-columns.html">Exercise 9</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section class="exercise-section">
+      <h2>Exercise 8: Box Model & Layout Control</h2>
+      
+      <h3>Scenario</h3>
+      <p class="intro-text">
+        Event sections on the portal are cramped and need better spacing. Understanding the CSS box model 
+        is essential for controlling element spacing and layout.
+      </p>
+
+      <h3>Objective</h3>
+      <p class="intro-text">
+        Control element spacing with margin, padding, border, and outline. Understand how the box model affects layout.
+      </p>
+
+      <h3>The CSS Box Model</h3>
+      <div class="eventCard">
+        <p>Every element has four layers in order from inside out:</p>
+        <ol class="feature-list" style="list-style-type: decimal; margin-left: 2rem;">
+          <li><strong>Content:</strong> The actual content (text, images)</li>
+          <li><strong>Padding:</strong> Space inside the border, around the content</li>
+          <li><strong>Border:</strong> Line around the padding</li>
+          <li><strong>Margin:</strong> Space outside the border, between elements</li>
+        </ol>
+      </div>
+
+      <h3>Visual Box Model Demonstration</h3>
+      <div class="visual-box-model">
+        <div class="margin-layer">
+          <div class="margin-label">MARGIN (outside)</div>
+          
+          <div class="border-layer">
+            <div class="border-label">BORDER</div>
+            
+            <div class="padding-layer">
+              <div class="padding-label">PADDING (inside)</div>
+              
+              <div class="content-layer">
+                <div class="content-label">CONTENT (text, images)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Box Model Properties</h3>
+
+      <div class="eventCard">
+        <h4>1. Margin (Outside Space)</h4>
+        <p>Space OUTSIDE the border, between elements:</p>
+        <div class="code-example">
+          margin: 2rem;                    /* all sides */<br>
+          margin: 1rem 2rem;               /* vertical | horizontal */<br>
+          margin: 1rem 2rem 1rem 2rem;     /* top | right | bottom | left */<br>
+          margin-top: 1rem;<br>
+          margin-right: 2rem;<br>
+          margin-bottom: 1rem;<br>
+          margin-left: 2rem;
+        </div>
+        <div class="box-margin-demo">
+          This box has 2rem margin on all sides (space between this and other elements)
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>2. Padding (Inside Space)</h4>
+        <p>Space INSIDE the border, around the content:</p>
+        <div class="code-example">
+          padding: 1.5rem;                 /* all sides */<br>
+          padding: 1rem 2rem;              /* vertical | horizontal */<br>
+          padding: 1rem 2rem 1rem 2rem;    /* top | right | bottom | left */
+        </div>
+        <div class="box-padding-demo">
+          This box has 3rem padding inside. Notice the content is pushed away from the border.
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>3. Border</h4>
+        <p>Line around the padding:</p>
+        <div class="code-example">
+          border: 3px solid #764ba2;<br>
+          border-width: 3px;<br>
+          border-style: solid|dashed|dotted|double;<br>
+          border-color: #764ba2;
+        </div>
+        <div class="box-with-border">
+          This box has a 3px solid purple border
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>4. Outline</h4>
+        <p>Similar to border but OUTSIDE the box model (doesn't affect layout):</p>
+        <div class="code-example">
+          outline: 3px dashed #e74c3c;<br>
+          outline-offset: 5px;  /* space between outline and border */
+        </div>
+        <div class="box-with-outline">
+          This box has a dashed outline with 5px offset
+        </div>
+      </div>
+
+      <h3>Box Sizing</h3>
+
+      <div class="eventCard">
+        <h4>box-sizing: content-box (default)</h4>
+        <p>Width and height only include content. Padding and border are ADDED to the size.</p>
+        <div class="code-example">
+          width: 200px;        /* content only */<br>
+          padding: 20px;       /* added to total width */<br>
+          border: 1px solid;   /* added to total width */<br>
+          /* Total width = 200 + 20 + 20 + 1 + 1 = 242px */
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>box-sizing: border-box (recommended)</h4>
+        <p>Width and height include content, padding, and border. Total size stays the same.</p>
+        <div class="code-example">
+          * {<br>
+          &nbsp;&nbsp;box-sizing: border-box;  /* apply to everything */<br>
+          }<br>
+          <br>
+          width: 200px;        /* includes padding + border */<br>
+          padding: 20px;<br>
+          border: 1px solid;<br>
+          /* Total width = exactly 200px */
+        </div>
+      </div>
+
+      <h3>Visibility Properties</h3>
+
+      <div class="eventCard">
+        <h4>visibility: hidden</h4>
+        <p>Hides element but <span class="highlight">reserves space</span> for it.</p>
+        <div class="code-example">
+          visibility: hidden;
+        </div>
+        <p><strong>Example:</strong></p>
+        <div class="box-hidden">
+          This box is hidden but still takes up space (notice the empty space)
+        </div>
+        <p style="color: #555;">Space is still reserved below (you may not see it on this layout)</p>
+      </div>
+
+      <div class="eventCard">
+        <h4>display: none</h4>
+        <p>Hides element and <span class="highlight">removes it from the document flow</span> (no space reserved).</p>
+        <div class="code-example">
+          display: none;
+        </div>
+        <p><strong>Example:</strong></p>
+        <div class="box-display-none">
+          This box is completely hidden and takes no space
+        </div>
+        <p style="color: #555;">The box above is completely hidden and removed from layout.</p>
+      </div>
+
+      <h3>Box Model Summary Table</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Position</th>
+            <th>Purpose</th>
+            <th>Affects Layout</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Margin</strong></td>
+            <td>Outside border</td>
+            <td>Space between elements</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td><strong>Border</strong></td>
+            <td>Around padding</td>
+            <td>Visual frame</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td><strong>Padding</strong></td>
+            <td>Inside border</td>
+            <td>Space around content</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td><strong>Outline</strong></td>
+            <td>Outside border</td>
+            <td>Highlight/focus indicator</td>
+            <td>No</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Developer Tools Inspection</h3>
+      <div class="eventCard">
+        <p>In Chrome DevTools (F12):</p>
+        <ol class="feature-list" style="list-style-type: decimal; margin-left: 2rem;">
+          <li>Right-click any element and select <strong>"Inspect"</strong></li>
+          <li>Look at the <strong>"Styles"</strong> tab</li>
+          <li>Scroll down to see the <strong>Box Model diagram</strong></li>
+          <li>Hover over values to see them highlighted on the page</li>
+          <li>Click and edit values live to test changes</li>
+        </ol>
+      </div>
+
+      <h3>Best Practices</h3>
+      <ul class="feature-list">
+        <li>Always use <strong>box-sizing: border-box</strong> for predictable sizing</li>
+        <li>Use <strong>margin for spacing between elements</strong></li>
+        <li>Use <strong>padding for space inside elements</strong></li>
+        <li>Use <strong>outline for focus indicators</strong> (accessibility)</li>
+        <li>Use <strong>DevTools to debug</strong> box model issues</li>
+        <li>Be consistent with <strong>margin/padding conventions</strong></li>
+        <li>Use <strong>visibility: hidden for toggling without reflow</strong></li>
+        <li>Use <strong>display: none to completely remove elements</strong></li>
+      </ul>
+
+      <h3>Challenge</h3>
+      <div class="colored-box" style="background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);">
+        <p style="color: white; margin: 0;">
+          <strong>Your Task:</strong> Create an event card layout with:
+          <br>
+          • Proper padding inside cards<br>
+          • Margins between multiple cards<br>
+          • Border or outline for visual interest<br>
+          • Use DevTools to inspect and tweak the box model<br>
+          • Create a responsive layout that stacks on mobile<br>
+          Open DevTools (F12) and adjust margin/padding values live to see the effects!
+        </p>
+      </div>
+
+      <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+        <a href="exercise-7-tables.html" class="cta-button">← Previous: Exercise 7</a>
+        <a href="exercise-9-multi-columns.html" class="cta-button" style="float: right;">Next: Exercise 9 →</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 CSS3 Exercises - Community Event Portal</p>
+  </footer>
+</body>
+</html>

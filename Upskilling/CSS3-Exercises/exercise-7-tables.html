@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 7: Table Styling - CSS3 Exercises</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div id="mainHeader">
+      <h1>Exercise 7: Table Styling</h1>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="exercise-6-links-lists.html">Exercise 6</a></li>
+      <li><a href="exercise-7-tables.html">Exercise 7</a></li>
+      <li><a href="exercise-8-box-model.html">Exercise 8</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section class="exercise-section">
+      <h2>Exercise 7: Table Styling</h2>
+      
+      <h3>Scenario</h3>
+      <p class="intro-text">
+        The events admin needs a table to display upcoming events. The default HTML table styling doesn't match our design, 
+        so we need to apply custom CSS to make it look professional.
+      </p>
+
+      <h3>Objective</h3>
+      <p class="intro-text">
+        Format HTML tables using CSS to create professional, readable data presentations with proper spacing and visual hierarchy.
+      </p>
+
+      <h3>Basic Table Structure</h3>
+      <div class="eventCard">
+        <h4>HTML Structure</h4>
+        <div class="code-example">
+          &lt;table&gt;<br>
+          &nbsp;&nbsp;&lt;thead&gt;<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;&lt;th&gt;Header&lt;/th&gt;&lt;/tr&gt;<br>
+          &nbsp;&nbsp;&lt;/thead&gt;<br>
+          &nbsp;&nbsp;&lt;tbody&gt;<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;&lt;td&gt;Data&lt;/td&gt;&lt;/tr&gt;<br>
+          &nbsp;&nbsp;&lt;/tbody&gt;<br>
+          &lt;/table&gt;
+        </div>
+      </div>
+
+      <h3>Table Styling Demo</h3>
+      <div class="eventCard">
+        <h4>Sample Event Schedule Table</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Event Name</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Location</th>
+              <th>Attendees</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Community Potluck</td>
+              <td>March 15, 2024</td>
+              <td>6:00 PM</td>
+              <td>Central Park</td>
+              <td>45</td>
+            </tr>
+            <tr>
+              <td>Tech Meetup</td>
+              <td>March 18, 2024</td>
+              <td>7:00 PM</td>
+              <td>Tech Hub</td>
+              <td>32</td>
+            </tr>
+            <tr>
+              <td>Yoga Class</td>
+              <td>March 20, 2024</td>
+              <td>9:00 AM</td>
+              <td>Community Center</td>
+              <td>18</td>
+            </tr>
+            <tr>
+              <td>Book Club Meeting</td>
+              <td>March 22, 2024</td>
+              <td>5:30 PM</td>
+              <td>Local Library</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td>Volunteer Day</td>
+              <td>March 25, 2024</td>
+              <td>8:00 AM</td>
+              <td>Community Garden</td>
+              <td>28</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>CSS Table Properties</h3>
+
+      <div class="eventCard">
+        <h4>Border Collapse</h4>
+        <p>Controls how table borders are displayed:</p>
+        <div class="code-example">
+          table {<br>
+          &nbsp;&nbsp;border-collapse: collapse;  /* single border line */<br>
+          }<br>
+          <br>
+          /* vs. border-separate (default) */
+        </div>
+        <p><strong>collapse:</strong> Borders merge into single lines (recommended)</p>
+        <p><strong>separate:</strong> Each cell has own border (creates double lines)</p>
+      </div>
+
+      <div class="eventCard">
+        <h4>Table, Header, and Data Cell Styling</h4>
+        <div class="code-example">
+          table {<br>
+          &nbsp;&nbsp;width: 100%;<br>
+          &nbsp;&nbsp;border-collapse: collapse;<br>
+          &nbsp;&nbsp;box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);<br>
+          }<br>
+          <br>
+          table th {<br>
+          &nbsp;&nbsp;background-color: #667eea;<br>
+          &nbsp;&nbsp;color: white;<br>
+          &nbsp;&nbsp;padding: 1rem;<br>
+          &nbsp;&nbsp;text-align: left;<br>
+          &nbsp;&nbsp;font-weight: 600;<br>
+          }<br>
+          <br>
+          table td {<br>
+          &nbsp;&nbsp;padding: 0.75rem 1rem;<br>
+          &nbsp;&nbsp;border: 1px solid #ddd;<br>
+          }<br>
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>Zebra Striping (Alternating Row Colors)</h4>
+        <p>Makes tables more readable by alternating row background colors:</p>
+        <div class="code-example">
+          table tbody tr:nth-child(even) {<br>
+          &nbsp;&nbsp;background-color: #f9f9f9;<br>
+          }<br>
+          <br>
+          table tbody tr:hover {<br>
+          &nbsp;&nbsp;background-color: #f0f4ff;<br>
+          }
+        </div>
+        <p><strong>Note:</strong> You can see zebra striping in the example table above!</p>
+      </div>
+
+      <h3>Table Alignment and Spacing</h3>
+
+      <div class="eventCard">
+        <h4>Text Alignment in Cells</h4>
+        <div class="code-example">
+          /* Center align all cells */<br>
+          table td, table th {<br>
+          &nbsp;&nbsp;text-align: center;<br>
+          }<br>
+          <br>
+          /* Left align first column */<br>
+          table td:first-child {<br>
+          &nbsp;&nbsp;text-align: left;<br>
+          }
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>Column Width Control</h4>
+        <div class="code-example">
+          table th:first-child {<br>
+          &nbsp;&nbsp;width: 30%;  /* Event name takes 30% */<br>
+          }<br>
+          <br>
+          table th:nth-child(2) {<br>
+          &nbsp;&nbsp;width: 20%;  /* Date takes 20% */<br>
+          }
+        </div>
+      </div>
+
+      <h3>Advanced Table Styling</h3>
+
+      <div class="eventCard">
+        <h4>Responsive Table (Horizontal Scroll)</h4>
+        <div class="code-example">
+          .table-wrapper {<br>
+          &nbsp;&nbsp;overflow-x: auto;  /* horizontal scroll on small screens */<br>
+          }<br>
+          <br>
+          table {<br>
+          &nbsp;&nbsp;min-width: 600px;  /* force minimum width */<br>
+          }
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>Caption Styling</h4>
+        <p>Add a title to your table:</p>
+        <div class="code-example">
+          &lt;table&gt;<br>
+          &nbsp;&nbsp;&lt;caption&gt;Community Events Schedule&lt;/caption&gt;<br>
+          &nbsp;&nbsp;...<br>
+          &lt;/table&gt;
+        </div>
+      </div>
+
+      <h3>Complete Table Styling Example</h3>
+      <div class="code-example">
+        /* ============================================ */<br>
+        /* TABLE STYLES */<br>
+        /* ============================================ */<br>
+        <br>
+        table {<br>
+        &nbsp;&nbsp;width: 100%;<br>
+        &nbsp;&nbsp;border-collapse: collapse;<br>
+        &nbsp;&nbsp;margin-bottom: 2rem;<br>
+        &nbsp;&nbsp;background-color: white;<br>
+        &nbsp;&nbsp;box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);<br>
+        }<br>
+        <br>
+        table th {<br>
+        &nbsp;&nbsp;background-color: #667eea;<br>
+        &nbsp;&nbsp;color: white;<br>
+        &nbsp;&nbsp;padding: 1rem;<br>
+        &nbsp;&nbsp;text-align: left;<br>
+        &nbsp;&nbsp;font-weight: 600;<br>
+        }<br>
+        <br>
+        table td {<br>
+        &nbsp;&nbsp;padding: 0.75rem 1rem;<br>
+        &nbsp;&nbsp;border: 1px solid #ddd;<br>
+        }<br>
+        <br>
+        table tbody tr:nth-child(even) {<br>
+        &nbsp;&nbsp;background-color: #f9f9f9;<br>
+        }<br>
+        <br>
+        table tbody tr:hover {<br>
+        &nbsp;&nbsp;background-color: #f0f4ff;<br>
+        }
+      </div>
+
+      <h3>Table Styling Best Practices</h3>
+      <ul class="feature-list">
+        <li>Always use <strong>border-collapse: collapse</strong> for cleaner tables</li>
+        <li>Use <strong>zebra striping</strong> to improve readability</li>
+        <li>Add <strong>hover effects</strong> to help users track rows</li>
+        <li>Provide <strong>sufficient padding</strong> (at least 0.75rem)</li>
+        <li>Make <strong>headers visually distinct</strong> with background color</li>
+        <li>Left-align text columns, center/right-align numeric columns</li>
+        <li>Use <strong>responsive wrappers</strong> for mobile-friendly tables</li>
+        <li>Ensure <strong>sufficient color contrast</strong> for accessibility</li>
+      </ul>
+
+      <h3>Challenge</h3>
+      <div class="colored-box" style="background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);">
+        <p style="color: white; margin: 0;">
+          <strong>Your Task:</strong> Create a community event table with:
+          <br>
+          • Styled headers with background color<br>
+          • Zebra striping for even rows<br>
+          • Hover effects on rows<br>
+          • Proper padding and alignment<br>
+          • Responsive design (scrollable on mobile)<br>
+          • At least 5 sample events
+        </p>
+      </div>
+
+      <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+        <a href="exercise-6-links-lists.html" class="cta-button">← Previous: Exercise 6</a>
+        <a href="exercise-8-box-model.html" class="cta-button" style="float: right;">Next: Exercise 8 →</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 CSS3 Exercises - Community Event Portal</p>
+  </footer>
+</body>
+</html>

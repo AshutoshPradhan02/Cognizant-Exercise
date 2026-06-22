@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 4: Color & Background Styling - CSS3 Exercises</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Exercise 4: Color and Background Demonstrations */
+    .hex-color-demo {
+      background-color: #E74C3C;
+      color: #FFFFFF;
+      padding: 1.5rem;
+      border-radius: 4px;
+      margin: 1rem 0;
+    }
+
+    .rgba-color-demo {
+      background-color: rgba(102, 126, 234, 0.2);
+      border: 2px solid rgba(102, 126, 234, 1);
+      padding: 1.5rem;
+      border-radius: 4px;
+      margin: 1rem 0;
+    }
+
+    .gradient-linear {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+      text-align: center;
+    }
+
+    .gradient-radial {
+      background: radial-gradient(circle, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+      text-align: center;
+    }
+
+    .bg-image-demo {
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%23667eea" opacity="0.1"/></svg>');
+      background-color: #f0f4ff;
+      background-size: 100px 100px;
+      padding: 2rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+      min-height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div id="mainHeader">
+      <h1>Exercise 4: Color & Background Styling</h1>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="exercise-4-colors-background.html">Exercise 4</a></li>
+      <li><a href="exercise-5-typography.html">Exercise 5</a></li>
+      <li><a href="exercise-6-links-lists.html">Exercise 6</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section class="exercise-section">
+      <h2>Exercise 4: Color & Background Styling</h2>
+      
+      <h3>Scenario</h3>
+      <p class="intro-text">
+        You're theming the event portal based on a city council's branding. You need to apply consistent colors and 
+        create visually appealing backgrounds.
+      </p>
+
+      <h3>Objective</h3>
+      <p class="intro-text">
+        Apply consistent colors, gradients, and backgrounds to create a professional, themed appearance for the portal.
+      </p>
+
+      <h3>Color Formats</h3>
+
+      <div class="eventCard">
+        <h4>1. Hex Color Format (#RRGGBB)</h4>
+        <p>Six-digit hexadecimal color representation. Most common in web design.</p>
+        <div class="code-example">
+          color: #667eea;  /* blue */<br>
+          color: #FF0000;  /* red */<br>
+          color: #00FF00;  /* green */
+        </div>
+        <div class="hex-color-demo">
+          This box uses HEX color #E74C3C (red) for background and #FFFFFF (white) for text
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>2. RGB Format</h4>
+        <p>Red, Green, Blue values (0-255)</p>
+        <div class="code-example">
+          color: rgb(102, 126, 234);  /* blue */<br>
+          color: rgb(255, 0, 0);      /* red */
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>3. RGBA Format (with Transparency)</h4>
+        <p>RGB with alpha channel (0-1 for opacity)</p>
+        <div class="code-example">
+          background-color: rgba(102, 126, 234, 0.2);  /* 20% opacity */<br>
+          background-color: rgba(102, 126, 234, 0.5);  /* 50% opacity */<br>
+          background-color: rgba(102, 126, 234, 1);    /* fully opaque */
+        </div>
+        <div class="rgba-color-demo">
+          This box uses RGBA with 20% opacity for background and full opacity for border
+        </div>
+      </div>
+
+      <h3>Background Properties</h3>
+
+      <div class="eventCard">
+        <h4>Background Color</h4>
+        <div class="code-example">
+          body {<br>
+          &nbsp;&nbsp;background-color: #f9f9f9;<br>
+          }
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>Linear Gradient (top to bottom)</h4>
+        <div class="code-example">
+          background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+        </div>
+        <div class="gradient-linear" style="background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);">
+          Linear Gradient (Top to Bottom)
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>Linear Gradient (diagonal)</h4>
+        <div class="code-example">
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        </div>
+        <div class="gradient-linear" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+          Linear Gradient (Diagonal - 135deg)
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>Radial Gradient</h4>
+        <div class="code-example">
+          background: radial-gradient(circle, #667eea 0%, #764ba2 100%);
+        </div>
+        <div class="gradient-radial">
+          Radial Gradient (Circular)
+        </div>
+      </div>
+
+      <div class="eventCard">
+        <h4>Background Image with Fallback</h4>
+        <div class="code-example">
+          background-image: url('images/pattern.png');<br>
+          background-color: #f0f4ff;  /* fallback */<br>
+          background-size: cover;<br>
+          background-position: center;
+        </div>
+        <div class="bg-image-demo">
+          Background Image with Color Fallback. (SVG pattern + fallback color)
+        </div>
+      </div>
+
+      <h3>Background Properties Summary</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Description</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>background-color</strong></td>
+            <td>Sets solid background color</td>
+            <td>#667eea</td>
+          </tr>
+          <tr>
+            <td><strong>background-image</strong></td>
+            <td>Sets background image or gradient</td>
+            <td>url('image.jpg') or linear-gradient(...)</td>
+          </tr>
+          <tr>
+            <td><strong>background-size</strong></td>
+            <td>Controls image size</td>
+            <td>cover, contain, 100px 50px</td>
+          </tr>
+          <tr>
+            <td><strong>background-position</strong></td>
+            <td>Positions background image</td>
+            <td>center, top left, 50% 50%</td>
+          </tr>
+          <tr>
+            <td><strong>background-attachment</strong></td>
+            <td>Image scrolls or fixed</td>
+            <td>scroll, fixed</td>
+          </tr>
+          <tr>
+            <td><strong>background-repeat</strong></td>
+            <td>Repeats background image</td>
+            <td>repeat, no-repeat, repeat-x</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Color Palette for Community Event Portal</h3>
+      <div class="eventCard">
+        <div class="flex-container">
+          <div style="background-color: #667eea; color: white; padding: 1.5rem; border-radius: 4px; text-align: center;">
+            <strong>Primary</strong><br>#667eea
+          </div>
+          <div style="background-color: #764ba2; color: white; padding: 1.5rem; border-radius: 4px; text-align: center;">
+            <strong>Secondary</strong><br>#764ba2
+          </div>
+          <div style="background-color: #f9f9f9; color: #333; padding: 1.5rem; border-radius: 4px; text-align: center;">
+            <strong>Background</strong><br>#f9f9f9
+          </div>
+          <div style="background-color: #28a745; color: white; padding: 1.5rem; border-radius: 4px; text-align: center;">
+            <strong>Success</strong><br>#28a745
+          </div>
+        </div>
+      </div>
+
+      <h3>Best Practices</h3>
+      <ul class="feature-list">
+        <li>Always provide <strong>fallback colors</strong> for gradients and images</li>
+        <li>Ensure <strong>sufficient contrast</strong> between text and background for accessibility</li>
+        <li>Use <strong>RGBA for transparency</strong> when you need semi-transparent overlays</li>
+        <li>Keep <strong>color palette consistent</strong> across the entire site</li>
+        <li>Test colors on <strong>different devices</strong> as they may appear differently</li>
+        <li>Use <strong>gradients sparingly</strong> to maintain professional appearance</li>
+      </ul>
+
+      <h3>Challenge</h3>
+      <div class="colored-box" style="background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);">
+        <p style="color: white; margin: 0;">
+          <strong>Your Task:</strong> Create a landing page for the community event portal with:
+          <br>
+          • A hero section with a linear gradient background<br>
+          • Different colored cards for different event categories<br>
+          • RGBA colors for semi-transparent overlays<br>
+          • A color scheme with primary, secondary, and accent colors<br>
+          Ensure good contrast for readability!
+        </p>
+      </div>
+
+      <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+        <a href="exercise-3-selectors.html" class="cta-button">← Previous: Exercise 3</a>
+        <a href="exercise-5-typography.html" class="cta-button" style="float: right;">Next: Exercise 5 →</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 CSS3 Exercises - Community Event Portal</p>
+  </footer>
+</body>
+</html>
