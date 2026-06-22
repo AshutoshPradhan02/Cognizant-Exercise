@@ -1,6 +1,6 @@
 # CSS3 Exercises - Community Event Portal
 
-Complete set of 11 CSS3 exercises covering styling, layout, and responsive design.
+Current set of 11 Module 1 CSS3 exercises covering styling, layout, and responsive design. Three additional topics will be added to Module 1 later.
 
 ## Theme
 
