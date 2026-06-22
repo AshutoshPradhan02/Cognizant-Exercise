@@ -1,11 +1,12 @@
-# Cognizant Upskilling Program - CSS3 Exercise Repository
+# Cognizant Upskilling Program - Frontend Training Repository
 
-A focused training program containing the current CSS3 exercise set. 
-These are all part of **Module 1**, organized by topic, with three additional topics to be added later.
+A focused training program for **Module 1**, containing Topic 1: Bootstrap and Topic 2: CSS3.
+These front-end topics are organized together, with three additional Module 1 topics to be added later.
 
 ## What's Included
 
-- **Module 1: CSS3 Exercises** - 11 current topic-based exercises covering styling, layout, responsive design, and debugging
+- **Module 1: Bootstrap Exercises** - 11 topic-based Bootstrap exercises
+- **Module 1: CSS3 Exercises** - 11 current topic-based CSS3 exercises covering styling, layout, responsive design, and debugging
 - **Professional Documentation** - Theory, examples, and best practices for each exercise
 - **Responsive Design** - Mobile-first approach and multi-device testing
 - **External Stylesheets** - Organized, commented CSS for real-world practice
@@ -15,17 +16,19 @@ These are all part of **Module 1**, organized by topic, with three additional to
 
 ### Upskilling Program Overview
 
-The `Upskilling/` folder contains the CSS3 training module and supporting assets:
+The `Upskilling/` folder contains the Module 1 frontend topics and supporting assets:
 
-- `Upskilling/index.html` - Main hub page for the current CSS3 module
-- `Upskilling/CSS3-Exercises/` - CSS3 exercise module
+- `Upskilling/index.html` - Main hub page for Module 1 topics
+- `Upskilling/Bootstrap-Exercises/` - Bootstrap topic exercises
+- `Upskilling/CSS3-Exercises/` - CSS3 topic exercises
 
 ## Module Details
 
-### Module 1: CSS3 Exercises (11 exercises)
-Topic-based CSS3 training for the Community Event Portal theme.
+### Module 1: Frontend Topics (22 exercises)
+Topic-based front-end training with Bootstrap and CSS3 content.
 
-- `Upskilling/CSS3-Exercises/index.html` - Main hub for all CSS3 exercises
+- `Upskilling/Bootstrap-Exercises/index.html` - Topic 1: Bootstrap exercises
+- `Upskilling/CSS3-Exercises/index.html` - Topic 2: CSS3 exercises
 - `Upskilling/CSS3-Exercises/exercise-1-css-methods.html` - Exercise 1: CSS inclusion methods
 - `Upskilling/CSS3-Exercises/exercise-2-syntax.html` - Exercise 2: CSS syntax and comments
 - `Upskilling/CSS3-Exercises/exercise-3-selectors.html` - Exercise 3: CSS selectors
