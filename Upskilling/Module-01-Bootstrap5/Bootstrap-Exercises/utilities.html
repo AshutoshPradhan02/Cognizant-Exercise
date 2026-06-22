@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Utilities Exercises</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light text-dark">
+  <div class="container py-5">
+    <h1 class="display-5 mb-4">Bootstrap Utilities Exercises</h1>
+    <div class="alert alert-info">
+      <strong>Exercises solved:</strong> 12.1, 12.2, 13.1, 13.2, 14.1, 14.2, 15.1, 15.2, 16.1, 16.2.
+      <p class="mb-0">This page covers spacing utilities, pricing layout, color/background utilities, responsive visibility, borders, shadows, and positioning.</p>
+    </div>
+
+    <section class="mb-5">
+      <h2 class="h4">Exercise 12.1: Spacing utilities</h2>
+      <div class="bg-white rounded shadow-sm p-4 mb-4">
+        <div class="mb-3 p-3 border rounded bg-light">Margin example: <code>m-3</code></div>
+        <div class="mt-4 py-5 p-3 border rounded bg-light">Padding example: <code>py-5</code></div>
+      </div>
+    </section>
+
+    <section class="mb-5">
+      <h2 class="h4">Exercise 12.2: Pricing layout</h2>
+      <div class="row gy-3">
+        <div class="col-12 col-md-4">
+          <div class="p-4 border rounded bg-white shadow-sm">
+            <h3 class="h5">Basic</h3>
+            <p class="display-6">Free</p>
+            <ul class="list-unstyled">
+              <li>1 project</li>
+              <li>5GB storage</li>
+              <li>Email support</li>
+            </ul>
+            <button class="btn btn-outline-primary">Select</button>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="p-4 border rounded bg-white shadow-sm">
+            <h3 class="h5">Business</h3>
+            <p class="display-6">$29/mo</p>
+            <ul class="list-unstyled">
+              <li>10 projects</li>
+              <li>50GB storage</li>
+              <li>Priority support</li>
+            </ul>
+            <button class="btn btn-primary">Select</button>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="p-4 border rounded bg-white shadow-sm">
+            <h3 class="h5">Enterprise</h3>
+            <p class="display-6">Custom</p>
+            <ul class="list-unstyled">
+              <li>Unlimited projects</li>
+              <li>Unlimited storage</li>
+              <li>Dedicated support</li>
+            </ul>
+            <button class="btn btn-outline-primary">Contact sales</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-5">
+      <h2 class="h4">Exercise 13.1 / 13.2: Colors and backgrounds</h2>
+      <div class="row g-3">
+        <div class="col-12 col-md-4"><div class="p-4 bg-primary text-white rounded">bg-primary</div></div>
+        <div class="col-12 col-md-4"><div class="p-4 bg-warning text-dark rounded">bg-warning</div></div>
+        <div class="col-12 col-md-4"><div class="p-4 bg-success text-white rounded">bg-success</div></div>
+      </div>
+      <div class="mt-3 p-4 rounded bg-gradient bg-dark text-white">Gradient background with white text.</div>
+    </section>
+
+    <section class="mb-5">
+      <h2 class="h4">Exercise 14.1 / 14.2: Display and responsive visibility</h2>
+      <div class="bg-white p-4 rounded shadow-sm">
+        <p class="d-none d-md-block">This paragraph is hidden on mobile and visible on medium screens and larger.</p>
+        <div class="d-none d-lg-flex justify-content-between p-3 bg-light rounded">Visible as flex only on large screens.</div>
+      </div>
+      <div class="mt-3 d-none d-sm-block p-3 border rounded bg-white">Responsive sidebar example visible on tablets and above.</div>
+    </section>
+
+    <section class="mb-5">
+      <h2 class="h4">Exercise 15.1 / 15.2: Borders, shadows, and rounded corners</h2>
+      <div class="row g-3">
+        <div class="col-12 col-md-6">
+          <div class="border border-primary border-3 rounded-circle p-3 d-inline-block">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" class="rounded-circle" alt="Rounded image" width="120" height="120">
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="p-4 border rounded-pill shadow-lg bg-white">A rounded pill card with large shadow for emphasis.</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="h4">Exercise 16.1 / 16.2: Positioning utilities</h2>
+      <div class="position-fixed bottom-0 start-0 end-0 bg-dark text-white text-center py-2">Fixed footer using <code>position-fixed bottom-0</code>.</div>
+      <div class="position-relative mt-5 p-4 bg-white border rounded" style="min-height:200px;">
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">New</span>
+        <p>Relative parent with an absolute badge overlay.</p>
+      </div>
+    </section>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

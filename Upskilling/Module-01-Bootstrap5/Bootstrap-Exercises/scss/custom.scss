@@ -1,0 +1,16 @@
+@import "variables";
+
+// Import Bootstrap core and utilities after variable overrides.
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+body {
+  background-color: $body-bg;
+  color: $body-color;
+}
+
+.btn-custom {
+  @extend .btn;
+  background-color: $primary;
+  color: white;
+  border-radius: $border-radius;
+}

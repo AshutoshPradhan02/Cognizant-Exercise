@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Navigation Exercises</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light text-dark">
+  <div class="container-fluid py-4">
+    <h1 class="display-5 mb-4">Bootstrap Navigation Exercises</h1>
+    <div class="alert alert-info">
+      <strong>Exercises solved:</strong> 10.1, 10.2.
+      <p class="mb-0">This page includes a responsive navbar with search and Bootstrap tab/pill navigation.</p>
+    </div>
+
+    <section class="mb-5">
+      <h2 class="h4">Exercise 10.1: Responsive navbar with logo and search</h2>
+      <nav class="navbar navbar-expand-md navbar-dark bg-primary rounded mb-3">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">BrandLogo</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <section>
+      <h2 class="h4">Exercise 10.2: Tabs and pills navigation</h2>
+      <div class="mb-4">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#homeTab" type="button" role="tab">Home</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#profileTab" type="button" role="tab">Profile</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#contactTab" type="button" role="tab">Contact</button></li>
+        </ul>
+        <div class="tab-content p-3 border rounded-bottom bg-white">
+          <div class="tab-pane fade show active" id="homeTab" role="tabpanel">Home tab content.</div>
+          <div class="tab-pane fade" id="profileTab" role="tabpanel">Profile tab content.</div>
+          <div class="tab-pane fade" id="contactTab" role="tabpanel">Contact tab content.</div>
+        </div>
+      </div>
+      <div>
+        <ul class="nav nav-pills" role="tablist">
+          <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#overview" type="button" role="tab">Overview</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#details" type="button" role="tab">Details</button></li>
+        </ul>
+        <div class="tab-content p-3 border rounded-bottom bg-white">
+          <div class="tab-pane fade show active" id="overview" role="tabpanel">Pills navigation overview content.</div>
+          <div class="tab-pane fade" id="details" role="tabpanel">Pills navigation details content.</div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

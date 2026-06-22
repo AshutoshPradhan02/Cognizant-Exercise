@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Sass Customization</title>
+  <link href="css/custom.css" rel="stylesheet">
+</head>
+<body class="bg-light text-dark">
+  <div class="container py-5">
+    <h1 class="display-5 mb-4">Bootstrap Sass Customization Exercises</h1>
+    <div class="alert alert-info">
+      <strong>Exercises solved:</strong> 19.1, 19.2.
+      <p class="mb-0">This page explains npm Sass setup and Bootstrap theme customization using variable overrides.</p>
+    </div>
+
+    <section class="mb-5">
+      <h2 class="h4">Exercise 19.1: npm and Sass setup</h2>
+      <p class="text-muted">Install Bootstrap, Bootstrap Icons, and Sass using npm to enable a production-style build process.</p>
+      <pre class="bg-white p-3 rounded shadow-sm"><code>npm install bootstrap@5.3.7 bootstrap-icons sass --save-dev</code></pre>
+      <p class="mb-0">The `package.json` in this folder includes scripts to build and watch Sass files.</p>
+    </section>
+
+    <section>
+      <h2 class="h4">Exercise 19.2: Customize primary colors and border radius</h2>
+      <p class="text-muted">Override Bootstrap variables in `scss/_variables.scss` before importing Bootstrap.</p>
+      <div class="p-4 bg-white border rounded shadow-sm">
+        <p class="fw-bold">Custom theme preview</p>
+        <button class="btn btn-primary">Primary button</button>
+        <button class="btn btn-outline-secondary">Secondary button</button>
+      </div>
+      <p class="mt-3">The compiled CSS file `css/custom.css` includes the updated primary color and border radius used by this page.</p>
+    </section>
+  </div>
+</body>
+</html>
