@@ -4,20 +4,18 @@ This repository contains the complete Bootstrap 5 exercise solutions for the Cog
 
 ## Repository structure
 
-- `Upskilling/Module-01-Bootstrap5/`
-  - `01-Setup/Exercise-1.1-CDN/` - solves Exercise 1.1.
-  - `01-Setup/Exercise-1.2-LocalBootstrap/` - solves Exercise 1.2.
-  - `Bootstrap-Exercises/` - organized main solution hub for Exercises 1 through 19.
-
-> The `Module-01-Bootstrap5` folder is not strictly required, but it is useful for grouping module-level training content. It is kept for a clean and professional repository layout.
+- `Upskilling/01-Setup/`
+  - `Exercise-1.1-CDN/` - solves Exercise 1.1.
+  - `Exercise-1.2-LocalBootstrap/` - solves Exercise 1.2.
+- `Upskilling/Bootstrap-Exercises/` - organized main solution hub for Exercises 1 through 19.
 
 ## Exercise mapping and page guide
 
-- `Upskilling/Module-01-Bootstrap5/01-Setup/Exercise-1.1-CDN/index.html`
+- `Upskilling/01-Setup/Exercise-1.1-CDN/index.html`
   - Exercise 1.1: Basic HTML page with Bootstrap 5 CDN.
-- `Upskilling/Module-01-Bootstrap5/01-Setup/Exercise-1.2-LocalBootstrap/index.html`
+- `Upskilling/01-Setup/Exercise-1.2-LocalBootstrap/index.html`
   - Exercise 1.2: Local Bootstrap setup using downloaded files.
-- `Upskilling/Module-01-Bootstrap5/Bootstrap-Exercises/index.html`
+- `Upskilling/Bootstrap-Exercises/index.html`
   - Central hub linking all numbered solutions.
 - `setup.html`
   - Exercise 1.1, 1.2, 2.1, 2.2: Bootstrap CDN, local setup, file structure, and JS bundle.
@@ -45,14 +43,14 @@ This repository contains the complete Bootstrap 5 exercise solutions for the Cog
 ## Installation
 
 ```powershell
-cd "d:\Campus\Cognizant\Cognizant-Exercise\Upskilling\Module-01-Bootstrap5\Bootstrap-Exercises"
+cd "d:\Campus\Cognizant\Cognizant-Exercise\Upskilling\Bootstrap-Exercises"
 npm install
 npm run build:css
 ```
 
 ## How to use
 
-Open `Upskilling/Module-01-Bootstrap5\Bootstrap-Exercises\index.html` in a browser. Each page clearly shows the exercise numbers and the exact questions it solves.
+Open `Upskilling\Bootstrap-Exercises\index.html` in a browser. Each page clearly shows the exercise numbers and the exact questions it solves.
 
 ## GitHub push
 

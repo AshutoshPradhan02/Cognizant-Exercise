@@ -9,7 +9,7 @@
     "sass": "^1.101.0"
   },
   "scripts": {
-    "build:css": "sass scss/custom.scss css/custom.css --no-source-map",
-    "watch:css": "sass --watch scss/custom.scss:css/custom.css"
+    "build:css": "sass --quiet scss/custom.scss css/custom.css --no-source-map",
+    "watch:css": "sass --quiet --watch scss/custom.scss:css/custom.css"
   }
 }
