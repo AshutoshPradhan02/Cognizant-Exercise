@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #16251f;
+  background: #eef8f2;
+  line-height: 1.6;
+}
+
+header,
+footer {
+  padding: 1.5rem;
+  text-align: center;
+  color: #f8fff9;
+  background: #143d2b;
+  border-bottom: 5px solid #e7b10a;
+}
+
+footer {
+  border-top: 5px solid #e7b10a;
+  border-bottom: 0;
+}
+
+main {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 1.5rem auto;
+}
+
+section {
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid #b8d8c3;
+  border-radius: 8px;
+  background: #fbfffc;
+  box-shadow: 0 10px 24px rgba(20, 61, 43, 0.1);
+}
+
+h2 {
+  color: #14532d;
+  margin-top: 0;
+}
+
+.control-grid,
+form {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.control-grid {
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  align-items: end;
+}
+
+label {
+  display: grid;
+  gap: 0.3rem;
+  font-weight: 700;
+}
+
+input,
+select,
+button {
+  min-height: 2.5rem;
+  padding: 0.6rem;
+  border-radius: 6px;
+  font: inherit;
+}
+
+input,
+select {
+  border: 1px solid #92bea0;
+  background: #ffffff;
+}
+
+button {
+  border: 0;
+  color: #f8fff9;
+  background: #1f7a4d;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 5px 14px rgba(31, 122, 77, 0.2);
+}
+
+button.cancel {
+  background: #a1411d;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+}
+
+.event-card {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 1px solid #b8d8c3;
+  border-left: 5px solid #e7b10a;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.event-card h3,
+.event-card p {
+  margin: 0;
+}
+
+.event-card.full {
+  opacity: 0.72;
+}
+
+.error {
+  color: #b42318;
+  min-height: 1.2rem;
+  font-size: 0.9rem;
+}
+
+.status {
+  color: #14532d;
+  font-weight: 700;
+}
+
+.spinner {
+  font-weight: 700;
+  color: #a1411d;
+}
+
+pre {
+  overflow-x: auto;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #16251f;
+  color: #dff7e8;
+  border-left: 5px solid #e7b10a;
+}

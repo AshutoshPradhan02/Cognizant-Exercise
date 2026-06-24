@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Exercises - Local Community Event Portal</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>JavaScript Exercises</h1>
+    <p>Local Community Event Portal</p>
+  </header>
+
+  <main>
+    <section class="toolbar" aria-labelledby="controls-title">
+      <h2 id="controls-title">Event Controls</h2>
+      <div class="control-grid">
+        <label>Filter by category
+          <select id="categoryFilter">
+            <option value="all">All categories</option>
+            <option value="music">Music</option>
+            <option value="workshop">Workshop</option>
+            <option value="cleanup">Cleanup</option>
+            <option value="food">Food</option>
+          </select>
+        </label>
+        <label>Quick search
+          <input id="searchInput" type="search" placeholder="Type an event name">
+        </label>
+        <button id="loadEventsBtn" type="button">Load Mock API Events</button>
+        <button id="jQueryFadeBtn" type="button">jQuery Fade Cards</button>
+      </div>
+      <p id="basicInfo"></p>
+      <p id="loadingSpinner" class="spinner" hidden>Loading events...</p>
+    </section>
+
+    <section aria-labelledby="events-title">
+      <h2 id="events-title">Upcoming Events</h2>
+      <div id="eventsList" class="event-grid"></div>
+    </section>
+
+    <section aria-labelledby="form-title">
+      <h2 id="form-title">Registration Form</h2>
+      <form id="registrationForm" novalidate>
+        <label>Name
+          <input name="name" type="text" placeholder="Full name">
+          <span class="error" data-error-for="name"></span>
+        </label>
+        <label>Email
+          <input name="email" type="email" placeholder="name@example.com">
+          <span class="error" data-error-for="email"></span>
+        </label>
+        <label>Selected event
+          <select name="event"></select>
+          <span class="error" data-error-for="event"></span>
+        </label>
+        <button id="registerBtn" type="submit">Submit Registration</button>
+      </form>
+      <p id="formStatus" class="status"></p>
+    </section>
+
+    <section aria-labelledby="coverage-title">
+      <h2 id="coverage-title">Exercise Coverage</h2>
+      <ol>
+        <li>External script setup with `main.js`, console log, and load alert.</li>
+        <li>Data types, template literals, and seat count updates.</li>
+        <li>Conditionals, loops, and try-catch registration logic.</li>
+        <li>Functions, closures, higher-order filtering, and callbacks.</li>
+        <li>Event class, prototype method, and `Object.entries()` output.</li>
+        <li>Array CRUD with `push()`, `filter()`, and `map()`.</li>
+        <li>DOM rendering with `querySelector()`, `createElement()`, and appending cards.</li>
+        <li>Click, change, and keydown event handling.</li>
+        <li>Fetch examples using `.then()`, `.catch()`, and `async/await`.</li>
+        <li>Modern JS with default parameters, destructuring, and spread cloning.</li>
+        <li>Form handling using `form.elements`, `preventDefault()`, validation, and inline errors.</li>
+        <li>AJAX POST simulation with `fetch()` and `setTimeout()` fallback messaging.</li>
+        <li>Console and Network debugging logs for registration payloads.</li>
+        <li>jQuery comparison note: frameworks like React or Vue help organize larger reusable UI components.</li>
+      </ol>
+      <pre id="debugOutput"></pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Local Community Event Portal - JavaScript Exercises</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    window.jQuery || document.write('<script src="../jQuery-Exercises/vendor/jquery-local.js"><\/script>');
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

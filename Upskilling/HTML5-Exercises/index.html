@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML5 Exercises - Local Community Event Portal</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #2f2d28;
+      background: #fff8ef;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #7c2d12, #be5b24 54%, #0f766e);
+      color: #fffaf2;
+      padding: 2rem 1rem;
+      text-align: center;
+      border-bottom: 6px solid #f7c948;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #fffcf5;
+      border-bottom: 1px solid #ead8bd;
+      box-shadow: 0 6px 18px rgba(124, 45, 18, 0.08);
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      padding: 0.75rem;
+      margin: 0;
+      list-style: none;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 0.55rem 0.8rem;
+      color: #7c2d12;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 6px;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background: #fbe4c7;
+      color: #0f766e;
+      outline: none;
+    }
+
+    main {
+      width: min(1120px, calc(100% - 2rem));
+      margin: 1.5rem auto;
+    }
+
+    section {
+      background: #fffcf5;
+      border: 1px solid #ead8bd;
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 10px 24px rgba(124, 45, 18, 0.09);
+    }
+
+    h2 {
+      color: #9a3412;
+      margin-top: 0;
+    }
+
+    #welcomeBanner {
+      background: #0f766e;
+      color: #ecfeff;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      border-left: 6px solid #f7c948;
+    }
+
+    .highlight {
+      background: #fef3c7;
+      color: #7c2d12;
+      padding: 0.1rem 0.3rem;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    caption {
+      caption-side: top;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    td {
+      padding: 0.75rem;
+      text-align: center;
+      vertical-align: top;
+      border: 1px solid #ead8bd;
+      background: #fffaf2;
+    }
+
+    .event-image {
+      width: 100%;
+      max-width: 220px;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border: 4px solid #0f766e;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .event-image.enlarged {
+      transform: scale(1.35);
+      border-color: #f7c948;
+      z-index: 2;
+      position: relative;
+    }
+
+    form {
+      display: grid;
+      gap: 0.9rem;
+      max-width: 720px;
+    }
+
+    label {
+      display: grid;
+      gap: 0.3rem;
+      font-weight: 700;
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+      font: inherit;
+      border-radius: 6px;
+    }
+
+    input,
+    select,
+    textarea {
+      border: 1px solid #d6b891;
+      padding: 0.65rem;
+      background: #fffaf2;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    button {
+      width: fit-content;
+      border: 0;
+      padding: 0.7rem 1.05rem;
+      color: #fffaf2;
+      background: #9a3412;
+      cursor: pointer;
+      font-weight: 700;
+      box-shadow: 0 5px 14px rgba(154, 52, 18, 0.22);
+    }
+
+    button.secondary {
+      background: #0f766e;
+    }
+
+    output,
+    .status {
+      display: block;
+      min-height: 1.5rem;
+      color: #0f766e;
+      font-weight: 700;
+    }
+
+    video {
+      width: min(100%, 720px);
+      border-radius: 8px;
+      border: 4px solid #ead8bd;
+      background: #2f2d28;
+    }
+
+    footer {
+      padding: 1rem;
+      text-align: center;
+      color: #fffaf2;
+      background: #7c2d12;
+    }
+
+    @media (max-width: 720px) {
+      td {
+        display: block;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="home">
+    <h1>HTML5 Exercises</h1>
+    <p>Local Community Event Portal</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav aria-label="Main navigation">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="help.html" target="_blank">Help Document</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main -->
+  <main>
+    <section aria-labelledby="template-title">
+      <h2 id="template-title">1. HTML5 Base Template</h2>
+      <p>This page uses <code>&lt;!DOCTYPE html&gt;</code>, <code>&lt;html lang="en"&gt;</code>, <code>&lt;meta charset="UTF-8"&gt;</code>, and comments that label Navigation, Main, and Footer sections.</p>
+      <p class="highlight">Open Chrome DevTools and inspect this page to review the semantic document structure.</p>
+    </section>
+
+    <section id="events" aria-labelledby="events-title">
+      <h2 id="events-title">2. Navigation and Linking</h2>
+      <p>The navigation links above jump to matching section IDs such as <code>#events</code> and <code>#contact</code>. The Help Document link opens <code>help.html</code> in a new tab.</p>
+    </section>
+
+    <section aria-labelledby="welcome-title">
+      <h2 id="welcome-title">3. Welcome Message with Styling and ID/Class</h2>
+      <div id="welcomeBanner">
+        Welcome back, resident! Your city portal has <span style="color: red; font-weight: bold;">free entry for the first 50 registrations</span> this week.
+      </div>
+      <p>The <span class="highlight">highlight class</span> visually emphasizes important notices, while the banner uses the unique <code>welcomeBanner</code> ID.</p>
+    </section>
+
+    <section aria-labelledby="gallery-title">
+      <h2 id="gallery-title">4. Image Gallery for Community Events</h2>
+      <table>
+        <caption>Past community event highlights</caption>
+        <tr>
+          <td>
+            <img class="event-image" ondblclick="enlargeImage(this)" alt="Bottle painting community event" title="Bottle painting" src="media/Bottle%20painting.jpeg">
+            <p>Bottle painting</p>
+          </td>
+          <td>
+            <img class="event-image" ondblclick="enlargeImage(this)" alt="Candle making community event" title="Candle making" src="media/Candle%20making.jpeg">
+            <p>Candle making</p>
+          </td>
+          <td>
+            <img class="event-image" ondblclick="enlargeImage(this)" alt="Clay and pottery community event" title="Clay and pottery" src="media/Clay%20and%20pottery.jpeg">
+            <p>Clay and pottery</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img class="event-image" ondblclick="enlargeImage(this)" alt="Mystery socials community event" title="Mystery socials" src="media/Mystery%20socials.jpeg">
+            <p>Mystery socials</p>
+          </td>
+          <td>
+            <img class="event-image" ondblclick="enlargeImage(this)" alt="Pandav Bakhra community event" title="Pandav Bakhra" src="media/Pandav%20Bakhra.jpeg">
+            <p>Pandav Bakhra</p>
+          </td>
+          <td>
+            <img class="event-image" ondblclick="enlargeImage(this)" alt="Pickelball badminton community event" title="Pickelball badminton event" src="media/Pickelball%20badminton%20event.jpeg">
+            <p>Pickelball badminton event</p>
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <section aria-labelledby="registration-title">
+      <h2 id="registration-title">5. Event Registration Form</h2>
+      <form id="registrationForm" onsubmit="submitRegistration(event)">
+        <label>Name
+          <input name="name" type="text" placeholder="Enter your full name" required autofocus>
+        </label>
+        <label>Email
+          <input name="email" type="email" placeholder="name@example.com" required>
+        </label>
+        <label>Event Date
+          <input name="date" type="date" required>
+        </label>
+        <label>Event Type
+          <select id="eventType" name="eventType" required onchange="showFee(); savePreference();">
+            <option value="">Choose an event</option>
+            <option value="Bottle painting" data-fee="Rs. 150">Bottle painting</option>
+            <option value="Candle making" data-fee="Rs. 200">Candle making</option>
+            <option value="Clay and pottery" data-fee="Rs. 250">Clay and pottery</option>
+            <option value="Mystery socials" data-fee="Rs. 100">Mystery socials</option>
+            <option value="Pandav Bakhra" data-fee="Free">Pandav Bakhra</option>
+            <option value="Pickelball badminton event" data-fee="Rs. 300">Pickelball badminton event</option>
+          </select>
+        </label>
+        <label>Phone Number
+          <input id="phone" name="phone" type="tel" placeholder="10 digit phone number" onblur="validatePhone()">
+        </label>
+        <label>Message
+          <textarea id="message" name="message" placeholder="Tell us what you need" onkeyup="countCharacters()" required></textarea>
+        </label>
+        <button type="submit" onclick="showClickConfirmation()">Register</button>
+        <output id="confirmation"></output>
+        <p id="feeMessage" class="status"></p>
+        <p id="phoneMessage" class="status"></p>
+        <p id="characterCount" class="status">Characters: 0</p>
+      </form>
+    </section>
+
+    <section aria-labelledby="feedback-title">
+      <h2 id="feedback-title">6. Event Feedback with Event Handling</h2>
+      <p>Try the phone field blur validation, dropdown fee update, register click confirmation, double-click gallery image enlargement, and message character counter above.</p>
+    </section>
+
+    <section aria-labelledby="video-title">
+      <h2 id="video-title">7. Video Invite with Media Events</h2>
+      <video controls oncanplay="videoReady()" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='720' height='405'%3E%3Crect fill='%23153f6f' width='720' height='405'/%3E%3Cpolygon points='315,135 315,270 430,202' fill='%23ffffff'/%3E%3Ctext x='150' y='335' font-family='Arial' font-size='34' fill='%23ffffff'%3ECommunity Event Invite%3C/text%3E%3C/svg%3E">
+        <source src="media/Invitation%20video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p id="videoMessage" class="status"></p>
+    </section>
+
+    <section aria-labelledby="storage-title">
+      <h2 id="storage-title">8. Saving User Preferences</h2>
+      <p>The selected event type is saved in <code>localStorage</code> and restored after reload. Session visit data is stored in <code>sessionStorage</code>.</p>
+      <button class="secondary" type="button" onclick="clearPreferences()">Clear Preferences</button>
+      <p id="storageMessage" class="status"></p>
+    </section>
+
+    <section aria-labelledby="geo-title">
+      <h2 id="geo-title">9. Geolocation for Event Mapping</h2>
+      <button type="button" onclick="findNearbyEvents()">Find Nearby Events</button>
+      <p id="geoResult" class="status"></p>
+    </section>
+
+    <section aria-labelledby="debug-title">
+      <h2 id="debug-title">10. Debugging with Chrome DevTools</h2>
+      <p>Use Inspect Element to experiment with styles, the Console tab to view script logs, and Sources breakpoints inside the JavaScript functions on this page.</p>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p>Email: events@localcouncil.example | Phone: 12345 67890</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Local Community Event Portal - HTML5 Exercises</p>
+  </footer>
+
+  <script>
+    let formDirty = false;
+
+    window.addEventListener('DOMContentLoaded', function () {
+      console.log('HTML5 exercise portal loaded');
+      sessionStorage.setItem('visitedHtml5Portal', 'true');
+      restorePreference();
+      document.getElementById('registrationForm').addEventListener('input', function () {
+        formDirty = true;
+      });
+    });
+
+    window.onbeforeunload = function () {
+      if (formDirty) {
+        return 'You have unfinished registration details. Leave anyway?';
+      }
+    };
+
+    function submitRegistration(event) {
+      event.preventDefault();
+      const form = event.target;
+      const name = form.elements.name.value;
+      const eventType = form.elements.eventType.value;
+      document.getElementById('confirmation').textContent = 'Thank you, ' + name + '. Your registration for ' + eventType + ' is confirmed.';
+      formDirty = false;
+    }
+
+    function validatePhone() {
+      const phone = document.getElementById('phone').value.trim();
+      const message = document.getElementById('phoneMessage');
+      message.textContent = phone === '' || /^[0-9]{10}$/.test(phone) ? 'Phone number looks valid.' : 'Please enter exactly 10 digits.';
+    }
+
+    function showFee() {
+      const select = document.getElementById('eventType');
+      const selected = select.options[select.selectedIndex];
+      document.getElementById('feeMessage').textContent = selected.value ? 'Selected event fee: ' + selected.dataset.fee : '';
+    }
+
+    function showClickConfirmation() {
+      console.log('Register button clicked');
+    }
+
+    function enlargeImage(image) {
+      image.classList.toggle('enlarged');
+    }
+
+    function countCharacters() {
+      const count = document.getElementById('message').value.length;
+      document.getElementById('characterCount').textContent = 'Characters: ' + count;
+    }
+
+    function videoReady() {
+      document.getElementById('videoMessage').textContent = 'Video ready to play';
+    }
+
+    function savePreference() {
+      const value = document.getElementById('eventType').value;
+      if (value) {
+        localStorage.setItem('preferredEventType', value);
+        document.getElementById('storageMessage').textContent = 'Preference saved: ' + value;
+      }
+    }
+
+    function restorePreference() {
+      const saved = localStorage.getItem('preferredEventType');
+      if (saved) {
+        document.getElementById('eventType').value = saved;
+        showFee();
+        document.getElementById('storageMessage').textContent = 'Loaded saved preference: ' + saved;
+      }
+    }
+
+    function clearPreferences() {
+      localStorage.clear();
+      sessionStorage.clear();
+      document.getElementById('eventType').value = '';
+      document.getElementById('storageMessage').textContent = 'Preferences cleared from localStorage and sessionStorage.';
+    }
+
+    function findNearbyEvents() {
+      const result = document.getElementById('geoResult');
+      if (!navigator.geolocation) {
+        result.textContent = 'Geolocation is not supported by this browser.';
+        return;
+      }
+
+      result.textContent = 'Finding your location...';
+      navigator.geolocation.getCurrentPosition(
+        function (position) {
+          result.textContent = 'Latitude: ' + position.coords.latitude.toFixed(5) + ', Longitude: ' + position.coords.longitude.toFixed(5);
+        },
+        function (error) {
+          if (error.code === error.PERMISSION_DENIED) {
+            result.textContent = 'Permission denied. Please allow location access to find nearby events.';
+          } else if (error.code === error.TIMEOUT) {
+            result.textContent = 'Location request timed out. Try again.';
+          } else {
+            result.textContent = 'Unable to retrieve location.';
+          }
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 10000,
+          maximumAge: 0
+        }
+      );
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Senior Wellness Camp",
+    "date": "2026-09-10",
+    "category": "workshop",
+    "location": "Health Center",
+    "seats": 20,
+    "fee": 0
+  },
+  {
+    "name": "Indie Band Evening",
+    "date": "2026-09-14",
+    "category": "music",
+    "location": "Riverfront Stage",
+    "seats": 30,
+    "fee": 150
+  }
+]
